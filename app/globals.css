@@ -1,26 +1,181 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --surface: #030303;
+  --panel: rgba(12, 12, 12, 0.88);
+  --surface-soft: #090909;
+  --text: #f5f5f5;
+  --text-soft: #b1b1b9;
+  --accent: #b91c1c;
+  --accent-strong: #ef4444;
+  --accent-soft: rgba(185, 28, 28, 0.2);
+  --border: rgba(255, 255, 255, 0.09);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: #ffffff;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(
+      1100px 540px at 10% -15%,
+      rgba(185, 28, 28, 0.2),
+      transparent 46%
+    ),
+    radial-gradient(
+      900px 500px at 100% 0%,
+      rgba(127, 29, 29, 0.18),
+      transparent 42%
+    ),
+    linear-gradient(180deg, #040404 0%, #090909 100%);
+  color: var(--text);
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.95));
+  opacity: 0.18;
+}
+
+.page-frame {
+  position: relative;
+}
+
+.page-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(185, 28, 28, 0.12), transparent 26%),
+    radial-gradient(circle at 88% 18%, rgba(127, 29, 29, 0.12), transparent 22%);
+  opacity: 0.9;
+}
+
+.section-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  opacity: 1;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.card {
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(127, 29, 29, 0.26), transparent 28%),
+    radial-gradient(circle at 100% 100%, rgba(127, 29, 29, 0.22), transparent 26%),
+    linear-gradient(
+      135deg,
+      rgba(62, 14, 14, 0.5) 0%,
+      rgba(10, 10, 10, 0.96) 42%,
+      rgba(52, 14, 14, 0.42) 100%
+    );
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.panel-soft {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 8, 0.96) 0%,
+    rgba(18, 9, 10, 0.92) 100%
+  );
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: #f4f4f5;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.pill-active {
+  border-color: rgba(239, 68, 68, 0.85);
+  background: linear-gradient(180deg, rgba(153, 27, 27, 0.95), rgba(122, 20, 20, 0.9));
+  box-shadow: 0 10px 30px rgba(127, 29, 29, 0.3);
+}
+
+.kicker {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.heading {
+  font-family: var(--font-heading), Arial, Helvetica, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.focus-outline {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-outline:focus-visible {
+  outline-color: var(--accent);
+  outline-offset: 3px;
+}
+
+.metric-bar {
+  height: 0.45rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.metric-fill {
+  height: 100%;
+  border-radius: 999px;
+}
+
+.metric-fill-red {
+  background: linear-gradient(90deg, #dc2626 0%, #f87171 100%);
+}
+
+.metric-fill-green {
+  background: linear-gradient(90deg, #16a34a 0%, #22c55e 100%);
+}
+
+.metric-fill-amber {
+  background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
 }
