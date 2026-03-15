@@ -84,17 +84,17 @@ export default function PerformanceBoard() {
             {focusAreas.map((area) => (
               <article
                 key={area.title}
-                className="flex min-h-[13.75rem] flex-col rounded-[1.45rem] border border-white/10 bg-black/65 p-4"
+                className="flex flex-col rounded-[1.45rem] border border-white/10 bg-black/65 p-4"
               >
-                <p className="min-h-[2.5rem] text-xs uppercase tracking-[0.24em] text-zinc-400">
+                <p className="text-xs uppercase tracking-[0.24em] text-zinc-400">
                   {area.title}
                 </p>
                 <div className="mt-3 flex items-end gap-2">
                   <p className="text-3xl font-bold heading sm:text-4xl">{area.score}</p>
                   <p className="pb-1 text-sm text-zinc-500">/ 100</p>
                 </div>
-                <p className="mt-2 min-h-[3.5rem] text-sm text-zinc-400">{area.note}</p>
-                <div className="metric-bar mt-auto">
+                <p className="mt-2 text-sm leading-snug text-zinc-400">{area.note}</p>
+                <div className="metric-bar mt-3">
                   <div
                     className="metric-fill"
                     style={{
