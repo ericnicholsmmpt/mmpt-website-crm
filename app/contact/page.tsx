@@ -39,14 +39,6 @@ export default function ContactPage() {
         copyClassName="text-[0.82rem] sm:text-[0.88rem]"
         actions={
           <>
-            <TrackedLink
-              href={bookingUrl}
-              intent="contact_booking"
-              label="Book From Contact"
-              className="h-10 px-4 py-0 text-[0.66rem] leading-none tracking-[0.12em]"
-            >
-              Book Now
-            </TrackedLink>
             <a
               href="tel:+17702985893"
               className="pill h-10 px-4 py-0 text-[0.66rem] tracking-[0.12em] focus-outline"

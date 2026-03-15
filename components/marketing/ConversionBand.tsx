@@ -26,7 +26,9 @@ export default function ConversionBand({
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 sm:flex-row [&>*]:w-full sm:[&>*]:w-auto">{actions}</div>
+        <div className="flex flex-col gap-3 sm:flex-row [&>*]:h-10 [&>*]:w-full [&>*]:px-4 [&>*]:py-0 [&>*]:text-[0.66rem] [&>*]:leading-none [&>*]:tracking-[0.12em] sm:[&>*]:w-auto">
+          {actions}
+        </div>
       </div>
     </section>
   );

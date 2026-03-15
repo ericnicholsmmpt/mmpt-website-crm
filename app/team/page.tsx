@@ -39,14 +39,6 @@ export default function TeamPage() {
         copyClassName="text-[0.82rem] sm:text-[0.88rem]"
         actions={
           <>
-            <TrackedLink
-              href={bookingUrl}
-              intent="team_booking"
-              label="Book From Team"
-              className="h-10 px-4 py-0 text-[0.66rem] leading-none tracking-[0.12em]"
-            >
-              Book Now
-            </TrackedLink>
             <Link
               href="/about"
               className="pill h-10 px-4 py-0 text-[0.66rem] tracking-[0.12em] focus-outline"

@@ -54,13 +54,17 @@ export default function LeadCaptureForm({
       body: JSON.stringify(payload),
     });
 
+    const result = await response.json().catch(() => null);
+
     if (!response.ok) {
-      const result = await response.json().catch(() => null);
       throw new Error(result?.error ?? "Unable to submit lead.");
     }
 
     setStatus("sent");
-    setMessage("Thanks. Our team will review your priorities and reach out today.");
+    setMessage(
+      result?.message ??
+        "Your request has been submitted. MMPT will review it and reach out with next steps soon."
+    );
     formRef.current?.reset();
   }
 
@@ -181,11 +185,23 @@ export default function LeadCaptureForm({
             </div>
           </fieldset>
 
+          {message && (
+            <div
+              className={`rounded-2xl border px-4 py-3 text-sm ${
+                status === "error"
+                  ? "border-rose-400/40 bg-rose-500/10 text-rose-200"
+                  : "border-emerald-400/35 bg-emerald-500/10 text-emerald-200"
+              }`}
+            >
+              {message}
+            </div>
+          )}
+
           <div className="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center">
             <button
               type="submit"
               disabled={disabled}
-              className="inline-flex w-full items-center justify-center rounded-full border border-red-400/60 bg-[linear-gradient(180deg,rgba(185,28,28,0.98),rgba(127,29,29,0.96))] px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:border-red-300 hover:shadow-[0_18px_44px_rgba(127,29,29,0.35)] focus-outline disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+              className="inline-flex h-10 w-full items-center justify-center rounded-full border border-red-400/60 bg-[linear-gradient(180deg,rgba(185,28,28,0.98),rgba(127,29,29,0.96))] px-4 py-0 text-[0.66rem] font-semibold uppercase leading-none tracking-[0.12em] text-white transition hover:border-red-300 hover:shadow-[0_18px_44px_rgba(127,29,29,0.35)] focus-outline disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
             >
               {disabled ? "Submitting priorities..." : "Get best-fit recommendation"}
             </button>
@@ -195,7 +211,7 @@ export default function LeadCaptureForm({
               intent="direct_booking"
               label="Book Assessment"
               variant="ghost"
-              className="w-full sm:w-auto"
+              className="h-10 w-full px-4 py-0 text-[0.66rem] leading-none tracking-[0.12em] sm:w-auto"
             >
               Book Assessment Directly
             </TrackedLink>
@@ -227,15 +243,6 @@ export default function LeadCaptureForm({
         </aside>
       </div>
 
-      {message && (
-        <p
-          className={`mt-4 text-sm ${
-            status === "error" ? "text-rose-300" : "text-red-200"
-          }`}
-        >
-          {message}
-        </p>
-      )}
     </section>
   );
 }

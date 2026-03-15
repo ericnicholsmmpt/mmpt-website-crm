@@ -65,7 +65,7 @@ export const focusAreas = [
     tone: "amber" as const,
   },
   {
-    title: "Upper Body Strength + Power",
+    title: "UB Strength + Power",
     score: "92",
     note: "Upper-body force production and power output",
     width: "92%",
@@ -86,14 +86,14 @@ export const focusAreas = [
     tone: "red" as const,
   },
   {
-    title: "Lower Body Mobility",
+    title: "LB Mobility",
     score: "87",
     note: "Hip, knee, and ankle movement quality",
     width: "87%",
     tone: "red" as const,
   },
   {
-    title: "Lower Body Strength + Power",
+    title: "LB Strength + Power",
     score: "91",
     note: "Lower-body output, stability, and power access",
     width: "91%",

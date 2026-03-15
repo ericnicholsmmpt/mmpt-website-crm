@@ -3,19 +3,18 @@ import VideoModalButton from "../ui/VideoModalButton";
 import {
   bookingUrl,
   focusAreas,
-  platformFeatures,
 } from "../../lib/content/site";
 
 const systemHighlights = [
   {
     label: "Objective testing",
     value: "Force plate + motion capture",
-    copy: "Testing helps identify movement limitations, capacity gaps, and performance bottlenecks so the next step is easier to understand.",
+    copy: "Testing identifies movement limitations, capacity gaps, and performance bottlenecks so the next step is clear.",
   },
   {
     label: "Platform-guided programming",
     value: "Progress between visits",
-    copy: "Structured programming and ongoing support help athletes keep building outside the clinic, not just during appointments.",
+    copy: "Structured programming and ongoing support keep athletes progressing between visits, not just during appointments.",
   },
 ];
 
@@ -25,7 +24,7 @@ export default function PerformanceBoard() {
       <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
         <div className="grid gap-5">
           <div>
-            <p className="kicker">Platform-backed system</p>
+            <p className="kicker">Athlete Movement Assessment</p>
             <h2 className="mt-2 text-2xl font-semibold heading sm:text-4xl">
               The MMPT System for Recovery and Performance
             </h2>
@@ -35,14 +34,18 @@ export default function PerformanceBoard() {
             </p>
           </div>
 
-          <div className="grid gap-3">
-            {platformFeatures.map((feature) => (
-              <div
-                key={feature}
-                className="rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-4 text-sm text-zinc-300"
+          <div className="grid gap-4 sm:grid-cols-2">
+            {systemHighlights.map((item) => (
+              <article
+                key={item.label}
+                className="rounded-[1.5rem] border border-white/10 bg-black/60 p-5"
               >
-                {feature}
-              </div>
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
+                  {item.label}
+                </p>
+                <h3 className="mt-3 text-xl font-semibold heading sm:text-2xl">{item.value}</h3>
+                <p className="mt-3 text-sm text-zinc-300 sm:text-base">{item.copy}</p>
+              </article>
             ))}
           </div>
 
@@ -65,21 +68,6 @@ export default function PerformanceBoard() {
         </div>
 
         <div className="grid gap-4">
-          <div className="grid gap-4 sm:grid-cols-2">
-            {systemHighlights.map((item) => (
-              <article
-                key={item.label}
-                className="rounded-[1.5rem] border border-white/10 bg-black/60 p-5"
-              >
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
-                  {item.label}
-                </p>
-                <h3 className="mt-3 text-xl font-semibold heading sm:text-2xl">{item.value}</h3>
-                <p className="mt-3 text-sm text-zinc-300 sm:text-base">{item.copy}</p>
-              </article>
-            ))}
-          </div>
-
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {focusAreas.map((area) => (
               <article
