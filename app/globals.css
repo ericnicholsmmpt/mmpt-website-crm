@@ -2,7 +2,7 @@
 
 :root {
   --surface: #030303;
-  --panel: rgba(12, 12, 12, 0.88);
+  --panel: rgba(10, 10, 11, 0.92);
   --surface-soft: #090909;
   --text: #f5f5f5;
   --text-soft: #b1b1b9;
@@ -84,9 +84,9 @@ article {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 15% 30%, rgba(185, 28, 28, 0.12), transparent 26%),
-    radial-gradient(circle at 88% 18%, rgba(127, 29, 29, 0.12), transparent 22%);
-  opacity: 0.9;
+    radial-gradient(circle at 15% 30%, rgba(185, 28, 28, 0.07), transparent 24%),
+    radial-gradient(circle at 88% 18%, rgba(127, 29, 29, 0.07), transparent 20%);
+  opacity: 0.65;
 }
 
 .section-shell {
@@ -108,13 +108,13 @@ article {
 .card {
   border: 1px solid var(--border);
   background:
-    radial-gradient(circle at 0% 0%, rgba(127, 29, 29, 0.26), transparent 28%),
-    radial-gradient(circle at 100% 100%, rgba(127, 29, 29, 0.22), transparent 26%),
+    radial-gradient(circle at 0% 0%, rgba(127, 29, 29, 0.14), transparent 24%),
+    radial-gradient(circle at 100% 100%, rgba(127, 29, 29, 0.12), transparent 22%),
     linear-gradient(
       135deg,
-      rgba(62, 14, 14, 0.5) 0%,
-      rgba(10, 10, 10, 0.96) 42%,
-      rgba(52, 14, 14, 0.42) 100%
+      rgba(20, 12, 12, 0.82) 0%,
+      rgba(8, 8, 9, 0.97) 38%,
+      rgba(18, 11, 11, 0.84) 100%
     );
   box-shadow: var(--shadow);
   backdrop-filter: blur(8px);
@@ -124,8 +124,8 @@ article {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: linear-gradient(
     180deg,
-    rgba(8, 8, 8, 0.96) 0%,
-    rgba(18, 9, 10, 0.92) 100%
+    rgba(8, 8, 9, 0.97) 0%,
+    rgba(12, 10, 11, 0.95) 100%
   );
 }
 
@@ -135,7 +135,7 @@ article {
   justify-content: center;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(10, 10, 12, 0.7);
   color: #f4f4f5;
   font-size: 0.78rem;
   font-weight: 700;
@@ -195,4 +195,26 @@ article {
 
 .metric-fill-amber {
   background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+@media (max-width: 640px) {
+  .page-frame::after {
+    opacity: 0.45;
+  }
+
+  .card {
+    background:
+      radial-gradient(circle at 0% 0%, rgba(127, 29, 29, 0.09), transparent 22%),
+      radial-gradient(circle at 100% 100%, rgba(127, 29, 29, 0.08), transparent 20%),
+      linear-gradient(
+        135deg,
+        rgba(16, 10, 10, 0.88) 0%,
+        rgba(7, 7, 8, 0.98) 42%,
+        rgba(16, 10, 10, 0.88) 100%
+      );
+  }
+
+  .pill {
+    background: rgba(9, 9, 10, 0.82);
+  }
 }
