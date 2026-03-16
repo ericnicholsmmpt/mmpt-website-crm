@@ -58,8 +58,8 @@ export default function VideoModalButton({
             className="w-full max-w-4xl rounded-[1.75rem] border border-white/10 bg-black p-4 shadow-[0_24px_80px_rgba(0,0,0,0.55)] sm:p-5"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="mb-4 flex items-center justify-between gap-4">
-              <div>
+            <div className="mb-4 flex min-w-0 flex-wrap items-start justify-between gap-4">
+              <div className="min-w-0 flex-1">
                 <p className="kicker">Athlete Assessment</p>
                 <h3 className="mt-2 text-xl font-semibold heading sm:text-2xl">{title}</h3>
               </div>

@@ -119,6 +119,11 @@ export type ServiceDefinition = {
   shortTitle: string;
   tag: string;
   image: string;
+  mediaPhones?: Array<{
+    src: string;
+    alt: string;
+    fit?: "cover" | "contain";
+  }>;
   summary: string;
   bullets: string[];
   cta: string;
@@ -265,6 +270,23 @@ export const services: ServiceDefinition[] = [
     shortTitle: "Remote Support",
     tag: "Platform-guided continuity",
     image: "/images/remote-support-one.jpeg",
+    mediaPhones: [
+      {
+        src: "/images/platform-week-1.jpeg",
+        alt: "MMPT platform week and day programming view",
+        fit: "cover",
+      },
+      {
+        src: "/images/platform-third-screen.jpeg",
+        alt: "MMPT platform strength block and exercise list view",
+        fit: "cover",
+      },
+      {
+        src: "/images/remote-support.jpeg",
+        alt: "MMPT platform exercise detail and demo view",
+        fit: "contain",
+      },
+    ],
     summary:
       "A hybrid support model for athletes who need clear programming, accountability, and progress outside in-person visits.",
     bullets: [

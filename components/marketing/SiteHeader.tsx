@@ -32,7 +32,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
 
   return (
     <header className={headerClass}>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex min-w-0 max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
           <Link
             href="/"
@@ -84,7 +84,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
           </a>
         </div>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="shrink-0 flex items-center gap-2 lg:hidden">
           <TrackedLink
             href={bookingUrl}
             intent="global_booking_mobile"

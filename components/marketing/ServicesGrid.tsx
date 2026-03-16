@@ -26,21 +26,56 @@ export default function ServicesGrid({
         {services.map((service) => (
           <article
             key={service.slug}
-            className="flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-white/10 bg-black/60"
+            className="min-w-0 flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-white/10 bg-black/60"
           >
             <div className="relative border-b border-white/10">
-              <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
-              <Image
-                src={service.image}
-                alt={`${service.title} at Movement Medicine`}
-                width={1200}
-                height={900}
-                className="h-[12.5rem] w-full object-cover sm:h-[15rem]"
-              />
+              {service.mediaPhones?.length ? (
+                <div className="relative h-[12.5rem] overflow-hidden bg-[radial-gradient(circle_at_top,rgba(127,29,29,0.22),transparent_36%),linear-gradient(180deg,rgba(15,6,7,0.98),rgba(28,8,8,0.96))] sm:h-[15rem]">
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_35%,rgba(185,28,28,0.12)_100%)]" />
+                  <div className="relative z-10 flex h-full items-center justify-evenly px-2 sm:px-4">
+                    {service.mediaPhones.map((phone, index) => (
+                      <div
+                        key={phone.src}
+                        className={`relative aspect-[9/19.5] h-full shrink-0 ${
+                          index === 1 ? "z-10" : ""
+                        }`}
+                      >
+                        <div className="relative h-full rounded-[2rem] border border-white/14 bg-[linear-gradient(180deg,rgba(52,55,61,0.98),rgba(16,17,20,1))] p-[0.24rem] shadow-[0_20px_50px_rgba(0,0,0,0.55)]">
+                          <div className="relative h-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-black">
+                            <div className="pointer-events-none absolute inset-x-[31%] top-1.5 z-10 h-3 rounded-full bg-black/95" />
+                            <Image
+                              src={phone.src}
+                              alt={phone.alt}
+                              width={700}
+                              height={1400}
+                              className={`h-full w-full ${
+                                phone.fit === "contain"
+                                  ? "object-contain object-center"
+                                  : "object-cover object-top"
+                              }`}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
+                  <Image
+                    src={service.image}
+                    alt={`${service.title} at Movement Medicine`}
+                    width={1200}
+                    height={900}
+                    className="h-[12.5rem] w-full object-cover sm:h-[15rem]"
+                  />
+                </>
+              )}
             </div>
-            <div className="flex grow flex-col p-5">
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
+            <div className="min-w-0 flex grow flex-col p-5">
+              <div className="min-w-0 flex flex-wrap items-start justify-between gap-3">
+                <p className="min-w-0 text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
                   {service.tag}
                 </p>
                 <div className="pill shrink-0 whitespace-nowrap px-3 py-1.5 text-[0.62rem] sm:text-[0.68rem]">

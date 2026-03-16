@@ -24,7 +24,7 @@ export default function ProcessGrid({
               key={item.step}
               className="rounded-[1.6rem] border border-white/10 bg-black/60 p-5"
             >
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <div className="pill pill-active min-w-[3.2rem] justify-center px-3 py-1.5">
                   {item.step}
                 </div>
