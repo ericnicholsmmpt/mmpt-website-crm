@@ -6,7 +6,7 @@ import { bookingUrl } from "../../lib/content/site";
 export default function ServiceDetailSections() {
   return (
     <section className="grid gap-6">
-      {services.map((service, index) => (
+      {services.map((service) => (
         <article
           key={service.slug}
           id={`detail-${service.slug}`}

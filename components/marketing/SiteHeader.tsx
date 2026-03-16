@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { TrackedLink } from "../ui/TrackedLink";
@@ -13,11 +13,16 @@ type SiteHeaderProps = {
 
 export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
   const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileOpenPath, setMobileOpenPath] = useState<string | null>(null);
+  const mobileOpen = mobileOpenPath === pathname;
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+  function toggleMobileMenu() {
+    setMobileOpenPath((value) => (value === pathname ? null : pathname));
+  }
+
+  function closeMobileMenu() {
+    setMobileOpenPath(null);
+  }
 
   const headerClass = overlay
     ? "fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-black/88 backdrop-blur-xl"
@@ -93,7 +98,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
             type="button"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
-            onClick={() => setMobileOpen((value) => !value)}
+            onClick={toggleMobileMenu}
             className="inline-flex items-center gap-2 rounded-full border border-white/25 px-3 py-2 text-sm font-medium text-white transition hover:border-white hover:bg-white/5 focus-outline"
           >
             <span className="text-xs uppercase tracking-[0.12em]">Menu</span>
@@ -113,6 +118,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
               <Link
                 key={item.href}
                 href={item.href}
+                onClick={closeMobileMenu}
                 className="rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm font-medium text-zinc-200 transition hover:border-white/20 hover:bg-white/[0.04] focus-outline"
               >
                 {item.label}
@@ -123,6 +129,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
               href="https://dashboard.mmptperformance.com/login"
               target="_blank"
               rel="noreferrer"
+              onClick={closeMobileMenu}
               className="inline-flex items-center justify-center rounded-2xl border border-white/25 px-4 py-3 text-sm font-medium text-white transition hover:border-white hover:bg-white/5 focus-outline"
             >
               MMPT Platform
