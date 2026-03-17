@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const siteUrl = "https://mmptperformance.com";
+export const siteUrl = "https://www.mmptperformance.com";
 export const siteName = "Movement Medicine Performance & PT";
 export const organizationName = "Movement Medicine Physical Therapy, LLC";
 export const defaultOgImage = "/images/home-hero.jpeg";
