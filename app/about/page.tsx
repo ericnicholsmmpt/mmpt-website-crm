@@ -4,25 +4,24 @@ import Link from "next/link";
 import MarketingShell from "../../components/marketing/MarketingShell";
 import PageHero from "../../components/marketing/PageHero";
 import ConversionBand from "../../components/marketing/ConversionBand";
+import JsonLd from "../../components/seo/JsonLd";
 import SectionIntro from "../../components/ui/SectionIntro";
 import { TrackedLink } from "../../components/ui/TrackedLink";
 import { aboutPillars, bookingUrl, whoWeServe } from "../../lib/content/site";
-import { siteName, siteUrl } from "../../lib/seo";
+import { buildBreadcrumbJsonLd, buildPageMetadata } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata: Metadata = buildPageMetadata({
+  title: "About Movement Medicine Performance & PT",
   description:
-    "Learn how Movement Medicine combines sports injury rehab, athlete assessment, and platform-guided programming into one performance-minded system in Atlanta.",
-  alternates: {
-    canonical: "/about",
-  },
-  openGraph: {
-    title: `About | ${siteName}`,
-    description:
-      "Learn how Movement Medicine combines sports injury rehab, athlete assessment, and platform-guided programming into one performance-minded system in Atlanta.",
-    url: `${siteUrl}/about`,
-  },
-};
+    "Learn how Movement Medicine combines sports injury rehab, athlete assessment, baseball care, and platform-guided programming into one performance-minded system in Atlanta.",
+  path: "/about",
+  keywords: [
+    "sports physical therapy atlanta",
+    "athlete assessment atlanta",
+    "baseball rehab atlanta",
+    "movement medicine atlanta",
+  ],
+});
 
 export default function AboutPage() {
   const facilityHighlights = [
@@ -57,6 +56,12 @@ export default function AboutPage() {
 
   return (
     <MarketingShell>
+      <JsonLd
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <PageHero
         kicker="About Movement Medicine"
         title="Built by athletes for athletes who want a better standard of care."
@@ -171,6 +176,7 @@ export default function AboutPage() {
                 alt="Movement Medicine performance and rehab facility"
                 width={1203}
                 height={803}
+                sizes="(min-width: 1024px) 34vw, (min-width: 640px) 50vw, 100vw"
                 className="h-[15rem] w-full object-cover sm:h-[18rem] lg:h-[16rem]"
               />
             </div>
@@ -182,6 +188,7 @@ export default function AboutPage() {
                 alt="Movement Medicine athlete training and treatment space"
                 width={1203}
                 height={803}
+                sizes="(min-width: 1024px) 34vw, (min-width: 640px) 50vw, 100vw"
                 className="h-[15rem] w-full object-cover sm:h-[18rem] lg:h-[16rem]"
               />
             </div>

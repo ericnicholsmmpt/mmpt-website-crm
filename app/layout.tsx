@@ -4,10 +4,11 @@ import { Suspense } from "react";
 import { Inter, Rajdhani } from "next/font/google";
 import VisitTracker from "../components/analytics/VisitTracker";
 import GoogleAnalytics from "../components/analytics/GoogleAnalytics";
+import JsonLd from "../components/seo/JsonLd";
 import {
   defaultDescription,
-  jsonLdScript,
-  localBusinessJsonLd,
+  defaultOgImage,
+  siteGraphJsonLd,
   siteName,
   siteUrl,
 } from "../lib/seo";
@@ -34,18 +35,30 @@ export const metadata: Metadata = {
   },
   description: defaultDescription,
   applicationName: siteName,
+  category: "Sports medicine physical therapy and athlete performance",
   icons: {
     icon: "/images/icon.jpeg",
     shortcut: "/images/icon.jpeg",
     apple: "/images/icon.jpeg",
   },
   keywords: [
-    "sports medicine physical therapy Atlanta",
-    "athlete assessment Atlanta",
-    "arm care baseball Atlanta",
-    "return to sport physical therapy",
-    "performance training Atlanta",
+    "sports physical therapy atlanta",
+    "baseball rehab atlanta",
+    "athlete movement assessment atlanta",
+    "strength and power testing atlanta",
+    "return to throwing program atlanta",
   ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   alternates: {
     canonical: "/",
   },
@@ -56,11 +69,18 @@ export const metadata: Metadata = {
     siteName,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: defaultOgImage,
+        alt: siteName,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteName,
     description: defaultDescription,
+    images: [defaultOgImage],
   },
   verification: process.env.GOOGLE_SITE_VERIFICATION
     ? { google: process.env.GOOGLE_SITE_VERIFICATION }
@@ -75,10 +95,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${rajdhani.variable} antialiased`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: jsonLdScript(localBusinessJsonLd) }}
-        />
+        <JsonLd data={siteGraphJsonLd} />
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>

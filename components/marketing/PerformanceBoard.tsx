@@ -1,9 +1,11 @@
+import dynamic from "next/dynamic";
 import { TrackedLink } from "../ui/TrackedLink";
-import VideoModalButton from "../ui/VideoModalButton";
 import {
   bookingUrl,
   focusAreas,
 } from "../../lib/content/site";
+
+const VideoModalButton = dynamic(() => import("../ui/VideoModalButton"));
 
 const systemHighlights = [
   {

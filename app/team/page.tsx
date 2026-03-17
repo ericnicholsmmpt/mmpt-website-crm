@@ -4,6 +4,7 @@ import Link from "next/link";
 import MarketingShell from "../../components/marketing/MarketingShell";
 import PageHero from "../../components/marketing/PageHero";
 import ConversionBand from "../../components/marketing/ConversionBand";
+import JsonLd from "../../components/seo/JsonLd";
 import SectionIntro from "../../components/ui/SectionIntro";
 import { TrackedLink } from "../../components/ui/TrackedLink";
 import {
@@ -11,26 +12,29 @@ import {
   featuredTeamMembers,
   supportingTeamMembers,
 } from "../../lib/content/site";
-import { siteName, siteUrl } from "../../lib/seo";
+import { buildBreadcrumbJsonLd, buildPageMetadata } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Team",
+export const metadata: Metadata = buildPageMetadata({
+  title: "Sports Physical Therapy and Baseball Rehab Team in Atlanta",
   description:
-    "Meet the Movement Medicine clinicians behind Sports PT, athlete assessment, arm care, and performance support in Atlanta.",
-  alternates: {
-    canonical: "/team",
-  },
-  openGraph: {
-    title: `Team | ${siteName}`,
-    description:
-      "Meet the Movement Medicine clinicians behind Sports PT, athlete assessment, arm care, and performance support in Atlanta.",
-    url: `${siteUrl}/team`,
-  },
-};
+    "Meet the Movement Medicine clinicians behind sports physical therapy, baseball rehab, athlete assessment, arm care, and performance support in Atlanta.",
+  path: "/team",
+  keywords: [
+    "sports physical therapy atlanta team",
+    "baseball rehab atlanta team",
+    "athlete assessment atlanta clinicians",
+  ],
+});
 
 export default function TeamPage() {
   return (
     <MarketingShell>
+      <JsonLd
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Team", path: "/team" },
+        ])}
+      />
       <PageHero
         kicker="Team"
         title="Meet the team behind the MMPT system."
@@ -65,9 +69,10 @@ export default function TeamPage() {
                 <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.16)_48%,rgba(20,4,4,0.92)_100%)]" />
                 <Image
                   src={member.image}
-                  alt={member.name}
+                  alt={`${member.name}, ${member.role} at Movement Medicine Performance & PT`}
                   width={900}
                   height={1100}
+                  sizes="(min-width: 1280px) 20vw, (min-width: 768px) 33vw, 100vw"
                   className="h-full w-full object-cover object-top"
                 />
               </div>

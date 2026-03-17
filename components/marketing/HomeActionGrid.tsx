@@ -61,9 +61,10 @@ export default function HomeActionGrid() {
               <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
               <Image
                 src={card.image}
-                alt={`${card.title} at MMPT`}
+                alt={`${card.title} session at Movement Medicine Performance & PT in Atlanta`}
                 width={768}
                 height={1024}
+                sizes="(min-width: 1024px) 33vw, 100vw"
                 className={`h-[14rem] w-full object-cover sm:h-[18rem] ${card.imageClassName}`}
               />
             </div>

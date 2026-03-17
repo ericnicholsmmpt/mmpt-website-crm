@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import MarketingShell from "../../components/marketing/MarketingShell";
 import PageHero from "../../components/marketing/PageHero";
-import LeadCaptureForm from "../../components/forms/LeadCaptureForm";
 import ConversionBand from "../../components/marketing/ConversionBand";
+import JsonLd from "../../components/seo/JsonLd";
 import SectionIntro from "../../components/ui/SectionIntro";
 import { TrackedLink } from "../../components/ui/TrackedLink";
 import {
@@ -11,26 +12,33 @@ import {
   contactLocationPoints,
   contactMethods,
 } from "../../lib/content/site";
-import { siteName, siteUrl } from "../../lib/seo";
+import { buildBreadcrumbJsonLd, buildPageMetadata } from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact",
+const LeadCaptureForm = dynamic(
+  () => import("../../components/forms/LeadCaptureForm")
+);
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Contact Movement Medicine Performance & PT in Atlanta",
   description:
-    "Book Sports PT, Athlete Assessment, and Precision Arm Care with Movement Medicine in Atlanta, or contact the team for help choosing the right next step.",
-  alternates: {
-    canonical: "/contact",
-  },
-  openGraph: {
-    title: `Contact | ${siteName}`,
-    description:
-      "Book Sports PT, Athlete Assessment, and Precision Arm Care with Movement Medicine in Atlanta, or contact the team for help choosing the right next step.",
-    url: `${siteUrl}/contact`,
-  },
-};
+    "Contact Movement Medicine in Atlanta to book sports physical therapy, baseball rehab, athlete assessment, strength and power testing, or return-to-throwing support.",
+  path: "/contact",
+  keywords: [
+    "contact sports physical therapy atlanta",
+    "book athlete assessment atlanta",
+    "baseball rehab atlanta contact",
+  ],
+});
 
 export default function ContactPage() {
   return (
     <MarketingShell>
+      <JsonLd
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ])}
+      />
       <PageHero
         kicker="Contact and booking"
         title="Book now or get pointed to the right next step."

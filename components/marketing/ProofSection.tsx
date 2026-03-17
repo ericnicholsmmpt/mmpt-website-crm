@@ -27,9 +27,10 @@ export default function ProofSection() {
           <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
           <Image
             src="/images/trusted-care.jpeg"
-            alt="MMPT clinician working with an athlete"
+            alt="Movement Medicine clinician working with an athlete during sports rehab in Atlanta"
             width={1203}
             height={803}
+            sizes="(min-width: 1024px) 56vw, 100vw"
             className="h-[16rem] w-full object-cover object-[50%_32%] sm:h-[20rem] lg:h-[24rem]"
           />
         </div>

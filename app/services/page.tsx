@@ -5,28 +5,41 @@ import PageHero from "../../components/marketing/PageHero";
 import ServicesGrid from "../../components/marketing/ServicesGrid";
 import ServiceDetailSections from "../../components/marketing/ServiceDetailSections";
 import ConversionBand from "../../components/marketing/ConversionBand";
+import JsonLd from "../../components/seo/JsonLd";
 import { TrackedLink } from "../../components/ui/TrackedLink";
-import { bookingUrl } from "../../lib/content/site";
-import { siteName, siteUrl } from "../../lib/seo";
+import { bookingUrl, services } from "../../lib/content/site";
+import {
+  buildBreadcrumbJsonLd,
+  buildFaqJsonLd,
+  buildPageMetadata,
+} from "../../lib/seo";
 
-export const metadata: Metadata = {
-  title: "Services",
+const serviceFaqs = services.flatMap((service) => service.faqs);
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Sports Physical Therapy, Athlete Assessment, and Baseball Rehab in Atlanta",
   description:
-    "Explore Sports PT, Athlete Assessment, Precision Arm Care, and hybrid performance support from Movement Medicine in Atlanta.",
-  alternates: {
-    canonical: "/services",
-  },
-  openGraph: {
-    title: `Services | ${siteName}`,
-    description:
-      "Explore Sports PT, Athlete Assessment, Precision Arm Care, and hybrid performance support from Movement Medicine in Atlanta.",
-    url: `${siteUrl}/services`,
-  },
-};
+    "Explore sports physical therapy, athlete assessment, baseball rehab, strength and power testing, return-to-throwing support, and hybrid performance services from Movement Medicine in Atlanta.",
+  path: "/services",
+  keywords: [
+    "sports physical therapy atlanta",
+    "baseball rehab atlanta",
+    "athlete movement assessment atlanta",
+    "return to throwing program atlanta",
+    "strength and power testing atlanta",
+  ],
+});
 
 export default function ServicesPage() {
   return (
     <MarketingShell>
+      <JsonLd
+        data={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ])}
+      />
+      <JsonLd data={buildFaqJsonLd(serviceFaqs)} />
       <PageHero
         kicker="Services"
         title="Book the right service for recovery, performance, and return to sport."

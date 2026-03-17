@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import HomeHero from "../components/marketing/HomeHero";
 import HomeActionGrid from "../components/marketing/HomeActionGrid";
 import MarketingShell from "../components/marketing/MarketingShell";
@@ -7,28 +8,33 @@ import FaqSection from "../components/marketing/FaqSection";
 import PerformanceBoard from "../components/marketing/PerformanceBoard";
 import ProcessGrid from "../components/marketing/ProcessGrid";
 import ProofSection from "../components/marketing/ProofSection";
-import LeadCaptureForm from "../components/forms/LeadCaptureForm";
 import { TrackedLink } from "../components/ui/TrackedLink";
 import { bookingUrl, homeFaqs } from "../lib/content/site";
-import { buildFaqJsonLd, jsonLdScript } from "../lib/seo";
+import JsonLd from "../components/seo/JsonLd";
+import { buildFaqJsonLd, buildPageMetadata } from "../lib/seo";
 
-export const metadata: Metadata = {
+const LeadCaptureForm = dynamic(
+  () => import("../components/forms/LeadCaptureForm")
+);
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "Sports Physical Therapy, Baseball Rehab, and Athlete Assessment in Atlanta",
   description:
-    "Sports medicine physical therapy, athlete assessments, precision arm care, and performance training for athletes in Atlanta.",
-  alternates: {
-    canonical: "/",
-  },
-};
+    "Movement Medicine Performance & PT provides sports physical therapy, baseball rehab, athlete movement assessment, strength and power testing, and return-to-throwing support in Atlanta.",
+  path: "/",
+  keywords: [
+    "sports physical therapy atlanta",
+    "baseball rehab atlanta",
+    "athlete assessment atlanta",
+    "strength and power testing atlanta",
+    "return to throwing program atlanta",
+  ],
+});
 
 export default function Home() {
   return (
     <MarketingShell hero={<HomeHero />} overlayHeader>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: jsonLdScript(buildFaqJsonLd(homeFaqs)),
-        }}
-      />
+      <JsonLd data={buildFaqJsonLd(homeFaqs)} />
       <HomeActionGrid />
       <ProofSection />
 

@@ -48,6 +48,7 @@ export default function ServicesGrid({
                               alt={phone.alt}
                               width={700}
                               height={1400}
+                              sizes="(min-width: 640px) 14rem, 26vw"
                               className={`h-full w-full ${
                                 phone.fit === "contain"
                                   ? "object-contain object-center"
@@ -65,9 +66,10 @@ export default function ServicesGrid({
                   <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
                   <Image
                     src={service.image}
-                    alt={`${service.title} at Movement Medicine`}
+                    alt={`${service.title} support at Movement Medicine Performance & PT in Atlanta`}
                     width={1200}
                     height={900}
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     className="h-[12.5rem] w-full object-cover sm:h-[15rem]"
                   />
                 </>

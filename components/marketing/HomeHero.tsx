@@ -7,10 +7,11 @@ export default function HomeHero() {
     <section className="relative min-h-[82vh] overflow-hidden border-b border-red-800/40 bg-black sm:min-h-[90vh]">
       <Image
         src="/images/home-hero.jpeg"
-        alt="MMPT clinician guiding an athlete through movement work"
+        alt="Sports physical therapist guiding an athlete through movement assessment at Movement Medicine in Atlanta"
         width={1152}
         height={768}
         priority
+        sizes="100vw"
         className="absolute inset-0 h-full w-full object-cover object-[76%_center] sm:object-[72%_center]"
       />
 

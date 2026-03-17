@@ -11,9 +11,11 @@ export const primaryNav = [
 
 export const whoWeServe = [
   "Competitive Athletes",
-  "Baseball and Overhead Athletes",
-  "Return-to-Sport Athletes",
-  "Clients Who Want Objective Movement Data",
+  "Baseball Athletes and Pitchers",
+  "Throwing and Overhead Athletes",
+  "Post-Op and Return-to-Sport Athletes",
+  "High School, College, and Professional Athletes",
+  "Athletes Seeking Objective Performance Testing",
 ];
 
 export const proofPoints = [
@@ -145,7 +147,7 @@ export const services: ServiceDefinition[] = [
       "Sports medicine rehab for athletes returning from pain and injury back to training, competition, and confidence.",
     bullets: [
       "Non-operative injuries, post-op rehab, return-to-play planning",
-      "Arm care, prehab, manual therapy, and sport-specific progression",
+      "Baseball and sport injuries, arm care, prehab, manual therapy, and sport-specific progression",
       "Built for athletes who want clinical care without losing performance focus",
     ],
     cta: "Book Sports PT",
@@ -180,16 +182,16 @@ export const services: ServiceDefinition[] = [
   },
   {
     slug: "athlete-performance-assessment",
-    title: "Athlete Assessment",
-    shortTitle: "Athlete Assessment",
+    title: "Baseball Athlete Assessment",
+    shortTitle: "Baseball Athlete Assessment",
     tag: "Data-driven evaluation",
     image: "/images/athlete-assessment.jpeg",
     summary:
-      "A movement and force-based assessment built to show what is limiting mobility, strength, power, and overall performance.",
+      "A movement and force-based assessment built around the demands of baseball to show what is limiting mobility, strength, power, and overall performance.",
     bullets: [
-      "Motion capture, force plate, and movement profiling",
-      "Clear read on strengths, weaknesses, and programming priorities",
-      "Best first step for athletes who want objective direction",
+      "Movement capture, force plate, and baseball-specific profiling",
+      "Assessment results benchmarked against baseball athletes at your level",
+      "Clear priorities for performance, arm care, and next-step programming",
     ],
     cta: "Book Assessment",
     intent: "athlete_assessment",
@@ -223,12 +225,12 @@ export const services: ServiceDefinition[] = [
   },
   {
     slug: "arm-care-and-throwing-support",
-    title: "Precision Arm Care",
-    shortTitle: "Precision Arm Care",
+    title: "Baseball Arm Capacity Assessment",
+    shortTitle: "Baseball Arm Capacity Assessment",
     tag: "Throwing durability",
     image: "/images/arm-care-clean.jpeg",
     summary:
-      "A throwing-focused service built around arm durability, workload management, recovery, and long-term health.",
+      "A baseball/throwing-focused arm assessment built around arm durability, workload management, recovery, and long-term health.",
     bullets: [
       "Throwing-specific strength, mobility, and recovery support",
       "Programming shaped by position, volume, and current tolerance",
