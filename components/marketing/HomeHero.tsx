@@ -31,7 +31,7 @@ export default function HomeHero() {
           </div>
 
           <p className="mt-5 max-w-lg text-base text-zinc-300 sm:mt-6 sm:text-xl">
-            Platform-guided programming for recovery, performance, and return to sport.
+            We turn objective testing into clear sports performance and return-to-play decisions.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
