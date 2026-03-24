@@ -141,7 +141,7 @@ export const services: ServiceDefinition[] = [
     slug: "sports-medicine-physical-therapy",
     title: "Sports Medicine Physical Therapy",
     shortTitle: "Sports PT",
-    tag: "Pain + return to sport",
+    tag: "Injury + return to sport",
     image: "/images/return-to-sport.jpeg",
     summary:
       "Sports medicine rehab for athletes returning from pain and injury back to training, competition, and confidence.",
