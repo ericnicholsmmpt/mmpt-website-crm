@@ -101,21 +101,40 @@ export default function ServicesGrid({
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <TrackedLink
-                href={`${bookingUrl}&service=${service.intent}`}
-                intent={service.intent}
-                label={service.cta}
-                className="h-10 w-full px-4 py-0 text-[0.66rem] leading-none tracking-[0.12em] sm:w-auto"
-              >
-                {service.cta}
-              </TrackedLink>
-              <Link
-                href={`/services#detail-${service.slug}`}
-                className="pill h-10 w-full px-4 py-0 text-center text-[0.66rem] tracking-[0.12em] focus-outline sm:w-auto"
-              >
-                Learn More
-              </Link>
+              {service.serviceNote ? (
+                <div className="mt-5 rounded-[1rem] border border-amber-400/20 bg-amber-500/10 px-3 py-3">
+                  <p className="text-sm text-amber-50/90">
+                    {service.serviceNote}
+                  </p>
+                </div>
+              ) : null}
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <TrackedLink
+                  href={`${bookingUrl}&service=${service.intent}`}
+                  intent={service.intent}
+                  label={service.cta}
+                  className="h-10 w-full px-4 py-0 text-[0.66rem] leading-none tracking-[0.12em] sm:w-auto"
+                >
+                  {service.cta}
+                </TrackedLink>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
+                  <Link
+                    href={`/services#detail-${service.slug}`}
+                    className="pill h-10 w-full px-4 py-0 text-center text-[0.66rem] tracking-[0.12em] focus-outline sm:w-auto"
+                  >
+                    Learn More
+                  </Link>
+                  <div className="shrink-0 rounded-[1rem] border border-red-400/20 bg-red-950/20 px-3 py-2 text-right">
+                    {service.priceLines.map((priceLine) => (
+                      <p
+                        key={priceLine}
+                        className="whitespace-nowrap text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-red-100"
+                      >
+                        {priceLine}
+                      </p>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </article>

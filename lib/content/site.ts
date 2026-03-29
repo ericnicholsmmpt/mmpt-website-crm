@@ -121,6 +121,8 @@ export type ServiceDefinition = {
   shortTitle: string;
   tag: string;
   image: string;
+  priceLines: string[];
+  serviceNote?: string;
   mediaPhones?: Array<{
     src: string;
     alt: string;
@@ -143,6 +145,7 @@ export const services: ServiceDefinition[] = [
     shortTitle: "Sports PT",
     tag: "Injury + return to sport",
     image: "/images/return-to-sport.jpeg",
+    priceLines: ["$180/visit"],
     summary:
       "Sports medicine rehab for athletes returning from pain and injury back to training, competition, and confidence.",
     bullets: [
@@ -186,6 +189,9 @@ export const services: ServiceDefinition[] = [
     shortTitle: "Baseball Athlete Assessment",
     tag: "Data-driven evaluation",
     image: "/images/athlete-assessment.jpeg",
+    priceLines: ["$250"],
+    serviceNote:
+      "MMPT also offers sport-specific athlete assessments beyond baseball.",
     summary:
       "A movement and force-based assessment built around the demands of baseball to show what is limiting mobility, strength, power, and overall performance.",
     bullets: [
@@ -229,6 +235,7 @@ export const services: ServiceDefinition[] = [
     shortTitle: "Baseball Arm Capacity Assessment",
     tag: "Throwing durability",
     image: "/images/arm-care-clean.jpeg",
+    priceLines: ["$180"],
     summary:
       "A baseball/throwing-focused arm assessment built around arm durability, workload management, recovery, and long-term health.",
     bullets: [
@@ -272,6 +279,9 @@ export const services: ServiceDefinition[] = [
     shortTitle: "Remote Support",
     tag: "Platform-guided continuity",
     image: "/images/remote-support-one.jpeg",
+    priceLines: ["1 month: $200", "3 months: $150/month"],
+    serviceNote:
+      "Athlete Movement Assessment required before starting a 1- or 3-month program.",
     mediaPhones: [
       {
         src: "/images/platform-week-1.jpeg",

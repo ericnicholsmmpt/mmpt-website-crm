@@ -125,13 +125,18 @@ export default function ServicesPage() {
                 </div>
               </div>
 
-              <div className="mt-6 flex">
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a
                   href={teamAssessmentEmailHref}
                   className="inline-flex h-10 items-center justify-center rounded-full border border-red-400/60 bg-[linear-gradient(180deg,rgba(185,28,28,0.98),rgba(127,29,29,0.96))] px-4 py-0 text-[0.66rem] font-semibold uppercase leading-none tracking-[0.12em] text-white transition hover:border-red-300 hover:shadow-[0_18px_44px_rgba(127,29,29,0.35)] focus-outline"
                 >
                   Ask About Team Pricing
                 </a>
+                <div className="rounded-[1rem] border border-red-400/20 bg-red-950/20 px-3 py-2 sm:text-right">
+                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-red-100">
+                    10+ players + 1 coach platform access
+                  </p>
+                </div>
               </div>
             </div>
 
