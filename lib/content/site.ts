@@ -123,10 +123,15 @@ export type ServiceDefinition = {
   image: string;
   priceLines: string[];
   serviceNote?: string;
+  ctaHref?: string;
+  secondaryCtaHref?: string;
+  secondaryCtaLabel?: string;
+  secondaryCtaIntent?: string;
   mediaPhones?: Array<{
     src: string;
     alt: string;
     fit?: "cover" | "contain";
+    imageClassName?: string;
   }>;
   summary: string;
   bullets: string[];
@@ -230,46 +235,55 @@ export const services: ServiceDefinition[] = [
     ],
   },
   {
-    slug: "arm-care-and-throwing-support",
-    title: "Baseball Arm Capacity Assessment",
-    shortTitle: "Baseball Arm Capacity Assessment",
-    tag: "Throwing durability",
-    image: "/images/arm-care-clean.jpeg",
-    priceLines: ["$180"],
-    summary:
-      "A baseball/throwing-focused arm assessment built around arm durability, workload management, recovery, and long-term health.",
-    bullets: [
-      "Throwing-specific strength, mobility, and recovery support",
-      "Programming shaped by position, volume, and current tolerance",
-      "Strong fit for baseball families who want a clearer arm-care system",
+    slug: "instructed-strength-and-conditioning-training",
+    title: "Instructed Strength and Conditioning Training",
+    shortTitle: "Instructed Strength + Conditioning",
+    tag: "Coached strength + power",
+    image: "/images/instructed-strength-conditioning.jpeg",
+    priceLines: [
+      "3 months • 1x/week: $560/month",
+      "3 months • 2x/week: $700/month",
     ],
-    cta: "Book Arm Capacity Assessment",
-    intent: "arm_care",
+    serviceNote:
+      "Athlete Movement Assessment required before starting an instructed 3-month training program.",
+    ctaHref: `${bookingUrl}&service=athlete_assessment`,
+    secondaryCtaHref: "/contact",
+    secondaryCtaLabel: "Ask About Instructed Training",
+    secondaryCtaIntent: "instructed_strength_training_contact",
+    summary:
+      "A coached 3-month strength and conditioning program for athletes who want more than a generic lift on paper. Every plan starts with an Athlete Movement Assessment, then turns those findings into in-person coaching, sharper movement quality, and clearer progression in the weight room.",
+    bullets: [
+      "In-person instructed training that sharpens technique, intent, and training quality",
+      "Programming built from your assessment, sport demands, and current development priorities",
+      "Strong fit for athletes who want accountability, progression, and better carryover to performance",
+    ],
+    cta: "Book Athlete Assessment",
+    intent: "instructed_strength_training",
     audience: [
-      "Pitchers managing workload",
-      "Shoulder or elbow return",
-      "Families wanting structure",
+      "Athletes who want coaching, structure, and better execution",
+      "Baseball athletes building strength, rotational power, and durability",
+      "Families who want a clear development path with accountability",
     ],
     includes: [
-      "Weekly arm-care structure",
-      "Volume-based programming",
-      "Recovery + readiness support",
+      "Athlete Movement Assessment before training begins",
+      "Individualized 3-month strength and conditioning plan",
+      "Instructed training sessions 1x/week or 2x/week with progression updates",
     ],
     differentiators: [
-      "Built for overhead athletes",
-      "Programming adapts to workload",
-      "Supports durability + return",
+      "Assessment findings guide the program instead of generic templates",
+      "Coaching improves movement quality, force expression, and training intent",
+      "Built inside the same system as rehab, arm care, and long-term athlete development",
     ],
     faqs: [
       {
-        question: "Is this only for injured athletes?",
+        question: "Why is an Athlete Movement Assessment required first?",
         answer:
-          "No. The arm-care offer supports both recovery and proactive durability work for healthy throwers.",
+          "The assessment creates the baseline for training priorities, exercise selection, and progression so the program is built around the athlete instead of a generic template.",
       },
       {
-        question: "How is the routine delivered?",
+        question: "What makes instructed training different from a generic lifting plan?",
         answer:
-          "The routine is designed to be guided clearly with structure around reps, sets, and exercise execution.",
+          "This program adds coached execution, assessment-driven programming, and ongoing progression so athletes are not just following workouts, they are training with more purpose and better carryover to performance.",
       },
     ],
   },
@@ -281,7 +295,7 @@ export const services: ServiceDefinition[] = [
     image: "/images/remote-support-one.jpeg",
     priceLines: ["1 month: $200", "3 months: $150/month"],
     serviceNote:
-      "Athlete Movement Assessment required before starting a 1- or 3-month program.",
+      "Athlete Movement Assessment required first so your program can be individualized to your assessment findings, where you are in the season, and the goals that matter most to your game.",
     mediaPhones: [
       {
         src: "/images/platform-week-1.jpeg",
@@ -333,6 +347,116 @@ export const services: ServiceDefinition[] = [
         question: "When does remote support make sense?",
         answer:
           "It makes the most sense after an assessment, during longer-term development, or when consistency matters more than location.",
+      },
+    ],
+  },
+  {
+    slug: "arm-care-and-throwing-support",
+    title: "Baseball Arm Capacity Assessment",
+    shortTitle: "Baseball Arm Capacity Assessment",
+    tag: "Throwing durability",
+    image: "/images/arm-care-clean.jpeg",
+    priceLines: ["$180"],
+    summary:
+      "A baseball-specific arm assessment designed to show what your arm is currently tolerating, where durability may be limited, and what the next step should be for recovery, workload management, and long-term throwing health.",
+    bullets: [
+      "Objective arm-capacity testing tied to throwing demands and current tolerance",
+      "Clear next-step recommendations for recovery, workload, and arm-care direction",
+      "Best for baseball families who want clarity before building an arm-care plan",
+    ],
+    cta: "Book Arm Capacity Assessment",
+    intent: "arm_care",
+    audience: [
+      "Pitchers managing workload",
+      "Shoulder or elbow return",
+      "Families wanting structure",
+    ],
+    includes: [
+      "Weekly arm-care structure",
+      "Volume-based programming",
+      "Recovery + readiness support",
+    ],
+    differentiators: [
+      "Built for overhead athletes",
+      "Programming adapts to workload",
+      "Supports durability + return",
+    ],
+    faqs: [
+      {
+        question: "Is this only for injured athletes?",
+        answer:
+          "No. The arm-care offer supports both recovery and proactive durability work for healthy throwers.",
+      },
+      {
+        question: "How is the routine delivered?",
+        answer:
+          "The routine is designed to be guided clearly with structure around reps, sets, and exercise execution.",
+      },
+    ],
+  },
+  {
+    slug: "precision-arm-care-program",
+    title: "Precision Arm Care Program",
+    shortTitle: "Precision Arm Care Program",
+    tag: "Assessment-driven arm durability",
+    image: "/images/precision-arm-care-overview.jpeg",
+    priceLines: ["$49/month"],
+    serviceNote:
+      "Baseball Arm Capacity Assessment required before starting the Precision Arm Care Program.",
+    ctaHref: `${bookingUrl}&service=arm_care`,
+    mediaPhones: [
+      {
+        src: "/images/precision-arm-care-overview.jpeg",
+        alt: "Precision Arm Care Program overview screen in the MMPT platform",
+        fit: "cover",
+        imageClassName: "translate-y-3",
+      },
+      {
+        src: "/images/precision-arm-care-calendar.jpeg",
+        alt: "Precision Arm Care Program schedule and calendar screen in the MMPT platform",
+        fit: "cover",
+        imageClassName: "translate-y-3",
+      },
+      {
+        src: "/images/precision-arm-care-exercise.jpeg",
+        alt: "Precision Arm Care Program exercise detail screen in the MMPT platform",
+        fit: "contain",
+      },
+    ],
+    summary:
+      "A monthly arm-care program built from Baseball Arm Capacity Assessment results, not generic routines. Precision Arm Care turns key test findings into targeted injury-prevention exercises, recovery structure, and durability support that match the athlete's actual needs.",
+    bullets: [
+      "Assessment-driven arm-care programming based on test metrics and current throwing demands",
+      "Targeted injury-prevention work built to improve durability, recovery, and readiness",
+      "A data-driven weekly structure for athletes who want more consistency between throwing sessions",
+    ],
+    cta: "Book Arm Capacity Assessment",
+    intent: "precision_arm_care_program",
+    audience: [
+      "Baseball athletes who want proactive arm-care support",
+      "Pitchers and throwers who need a clearer durability plan",
+      "Players who want arm-care tied to objective testing instead of generic routines",
+    ],
+    includes: [
+      "Precision arm-care programming based on Arm Capacity Assessment results",
+      "Targeted exercises for durability, recovery, and workload support",
+      "Monthly structure athletes can follow between training and throwing",
+    ],
+    differentiators: [
+      "Exercises are matched to objective arm-capacity findings",
+      "Programming is built for the individual athlete, not a generic template",
+      "Strong bridge between assessment, arm health, and long-term throwing durability",
+    ],
+    faqs: [
+      {
+        question: "Why is the Arm Capacity Assessment required first?",
+        answer:
+          "The assessment shows what the athlete's arm is currently tolerating so the program can target the right durability, recovery, and injury-prevention priorities instead of relying on a one-size-fits-all routine.",
+      },
+      {
+        question: "What makes Precision Arm Care different from a generic arm-care routine?",
+        answer:
+          "Precision Arm Care is built from actual test metrics, not a standard list of exercises. That gives athletes a more specific plan around their current capacity, workload demands, and long-term throwing goals.",
       },
     ],
   },

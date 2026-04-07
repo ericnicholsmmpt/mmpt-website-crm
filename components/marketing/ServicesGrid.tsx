@@ -29,8 +29,8 @@ export default function ServicesGrid({
             className="min-w-0 flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-white/10 bg-black/60"
           >
             <div className="relative border-b border-white/10">
-              {service.slug !== "arm-care-and-throwing-support" &&
-              service.slug !== "remote-coaching-and-follow-up" ? (
+              {service.slug !== "remote-coaching-and-follow-up" &&
+              service.slug !== "precision-arm-care-program" ? (
                 <div className="pill absolute left-3 top-3 z-20 shrink-0 whitespace-nowrap bg-black/80 px-3 py-1.5 text-[0.56rem] tracking-[0.14em] shadow-[0_12px_28px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:left-4 sm:top-4 sm:text-[0.64rem]">
                   {service.slug === "sports-medicine-physical-therapy"
                     ? "Movement Medicine"
@@ -40,33 +40,47 @@ export default function ServicesGrid({
               {service.mediaPhones?.length ? (
                 <div className="relative h-[12.5rem] overflow-hidden bg-[radial-gradient(circle_at_top,rgba(127,29,29,0.22),transparent_36%),linear-gradient(180deg,rgba(15,6,7,0.98),rgba(28,8,8,0.96))] sm:h-[15rem]">
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_35%,rgba(185,28,28,0.12)_100%)]" />
-                  <div className="relative z-10 flex h-full items-center justify-evenly px-2 sm:px-4">
-                    {service.mediaPhones.map((phone, index) => (
-                      <div
-                        key={phone.src}
-                        className={`relative aspect-[9/19.5] h-full shrink-0 ${
-                          index === 1 ? "z-10" : ""
-                        }`}
-                      >
-                        <div className="relative h-full rounded-[2rem] border border-white/14 bg-[linear-gradient(180deg,rgba(52,55,61,0.98),rgba(16,17,20,1))] p-[0.24rem] shadow-[0_20px_50px_rgba(0,0,0,0.55)]">
-                          <div className="relative h-full overflow-hidden rounded-[1.75rem] border border-white/10 bg-black">
-                            <div className="pointer-events-none absolute inset-x-[31%] top-1.5 z-10 h-3 rounded-full bg-black/95" />
-                            <Image
-                              src={phone.src}
-                              alt={phone.alt}
-                              width={700}
-                              height={1400}
-                              sizes="(min-width: 640px) 14rem, 26vw"
-                              className={`h-full w-full ${
-                                phone.fit === "contain"
-                                  ? "object-contain object-center"
-                                  : "object-cover object-top"
-                              }`}
-                            />
+                  <div className="relative z-10 flex h-full items-center justify-evenly gap-2 px-3 sm:gap-3 sm:px-5">
+                    {service.mediaPhones.map((phone) => {
+                      return (
+                        <div
+                          key={phone.src}
+                          className="relative aspect-[9/19.2] h-[92%] shrink-0"
+                        >
+                          <div className="pointer-events-none absolute -left-[0.08rem] top-[23%] h-6 w-[0.14rem] rounded-full bg-[linear-gradient(180deg,rgba(238,242,247,0.45),rgba(67,76,89,0.92))]" />
+                          <div className="pointer-events-none absolute -left-[0.08rem] top-[31%] h-10 w-[0.14rem] rounded-full bg-[linear-gradient(180deg,rgba(238,242,247,0.35),rgba(48,56,68,0.92))]" />
+                          <div className="pointer-events-none absolute -right-[0.08rem] top-[28%] h-12 w-[0.14rem] rounded-full bg-[linear-gradient(180deg,rgba(238,242,247,0.35),rgba(48,56,68,0.92))]" />
+
+                          <div className="relative h-full rounded-[1.9rem] bg-[linear-gradient(145deg,rgba(130,136,146,0.92)_0%,rgba(48,54,63,0.98)_16%,rgba(18,20,24,1)_42%,rgba(11,12,15,1)_58%,rgba(74,80,90,0.96)_100%)] p-[0.14rem] shadow-[0_22px_54px_rgba(0,0,0,0.52)] ring-1 ring-white/8">
+                            <div className="pointer-events-none absolute inset-[0.06rem] rounded-[1.82rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01)_18%,rgba(0,0,0,0.14)_100%)]" />
+                            <div className="relative h-full rounded-[1.78rem] bg-[linear-gradient(180deg,rgba(14,16,19,1),rgba(6,7,9,1))] p-[0.12rem]">
+                              <div className="relative h-full overflow-hidden rounded-[1.62rem] border border-white/7 bg-black shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                                <div className="pointer-events-none absolute inset-x-[30%] top-[0.34rem] z-20 h-[0.72rem] rounded-full bg-black shadow-[0_2px_8px_rgba(0,0,0,0.7)] ring-1 ring-white/8" />
+                                <div className="pointer-events-none absolute left-1/2 top-[0.62rem] z-20 h-[0.14rem] w-7 -translate-x-1/2 rounded-full bg-zinc-800/90" />
+                                <div className="pointer-events-none absolute right-[36%] top-[0.47rem] z-20 h-1.5 w-1.5 rounded-full bg-zinc-700/95 ring-1 ring-black/60" />
+
+                                <Image
+                                  src={phone.src}
+                                  alt={phone.alt}
+                                  width={700}
+                                  height={1400}
+                                  sizes="(min-width: 640px) 14rem, 26vw"
+                                  className={`h-full w-full ${
+                                    phone.fit === "contain"
+                                      ? "object-contain object-center"
+                                      : "object-cover object-top"
+                                  } ${phone.imageClassName ?? ""}`}
+                                />
+
+                                <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(112deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.06)_14%,transparent_30%,transparent_70%,rgba(255,255,255,0.05)_86%,rgba(255,255,255,0.1)_100%)] opacity-40 mix-blend-screen" />
+                                <div className="pointer-events-none absolute inset-y-4 left-0 z-10 w-[14%] bg-[linear-gradient(90deg,rgba(255,255,255,0.08),transparent)] opacity-25" />
+                                <div className="pointer-events-none absolute inset-x-[37%] bottom-1.5 z-20 h-[0.18rem] w-[26%] rounded-full bg-white/16 shadow-[0_0_12px_rgba(255,255,255,0.08)]" />
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </div>
               ) : (
@@ -110,7 +124,7 @@ export default function ServicesGrid({
               ) : null}
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <TrackedLink
-                  href={`${bookingUrl}&service=${service.intent}`}
+                  href={service.ctaHref ?? `${bookingUrl}&service=${service.intent}`}
                   intent={service.intent}
                   label={service.cta}
                   className="h-10 w-full px-4 py-0 text-[0.66rem] leading-none tracking-[0.12em] sm:w-auto"

@@ -72,19 +72,31 @@ export default function ServiceDetailSections() {
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <TrackedLink
-              href={`${bookingUrl}&service=${service.intent}`}
+              href={service.ctaHref ?? `${bookingUrl}&service=${service.intent}`}
               intent={`${service.intent}_detail`}
               label={service.cta}
               className="h-10 w-full px-4 py-0 text-[0.66rem] leading-none tracking-[0.12em] sm:w-auto"
             >
               {service.cta}
             </TrackedLink>
-            <Link
-              href="/contact"
-              className="pill h-10 w-full px-4 py-0 text-center text-[0.66rem] tracking-[0.12em] focus-outline sm:w-auto"
-            >
-              Talk With Our Team
-            </Link>
+            {service.secondaryCtaHref ? (
+              <TrackedLink
+                href={service.secondaryCtaHref}
+                intent={service.secondaryCtaIntent ?? `${service.intent}_secondary`}
+                label={service.secondaryCtaLabel ?? "Talk With Our Team"}
+                variant="ghost"
+                className="h-10 w-full px-4 py-0 text-[0.66rem] leading-none tracking-[0.12em] sm:w-auto"
+              >
+                {service.secondaryCtaLabel ?? "Talk With Our Team"}
+              </TrackedLink>
+            ) : (
+              <Link
+                href="/contact"
+                className="pill h-10 w-full px-4 py-0 text-center text-[0.66rem] tracking-[0.12em] focus-outline sm:w-auto"
+              >
+                Talk With Our Team
+              </Link>
+            )}
           </div>
 
           <div className="mt-6 grid gap-3">
