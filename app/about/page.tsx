@@ -7,7 +7,12 @@ import ConversionBand from "../../components/marketing/ConversionBand";
 import JsonLd from "../../components/seo/JsonLd";
 import SectionIntro from "../../components/ui/SectionIntro";
 import { TrackedLink } from "../../components/ui/TrackedLink";
-import { aboutPillars, bookingUrl, whoWeServe } from "../../lib/content/site";
+import {
+  aboutPillars,
+  bookingUrl,
+  contactLocationPoints,
+  whoWeServe,
+} from "../../lib/content/site";
 import { buildBreadcrumbJsonLd, buildPageMetadata } from "../../lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -36,21 +41,6 @@ export default function AboutPage() {
     {
       title: "Premium facility standard",
       copy: "A clean, advanced environment with premium equipment helps athletes and families feel the standard immediately.",
-    },
-  ];
-
-  const locationPoints = [
-    {
-      label: "Address",
-      value: "1825 MacArthur Blvd NW, Atlanta, GA 30318",
-    },
-    {
-      label: "Phone",
-      value: "(770) 298-5893",
-    },
-    {
-      label: "Access",
-      value: "In-person, virtual, and hybrid support through our performance platform",
     },
   ];
 
@@ -205,19 +195,17 @@ export default function AboutPage() {
             </h2>
             <p className="mt-4 max-w-2xl text-sm text-zinc-300 sm:text-base">
               Athletes can train, test, and receive care in person at our Atlanta
-              facility, then continue through virtual and hybrid support on the MMPT
-              performance platform.
+              partner facilities, then continue through virtual and hybrid support
+              on the MMPT performance platform.
             </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=1825+MacArthur+Blvd+NW+Atlanta+GA+30318"
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href="/contact#locations"
                 className="inline-flex h-10 items-center justify-center rounded-full border border-red-400/60 bg-[linear-gradient(180deg,rgba(185,28,28,0.98),rgba(127,29,29,0.96))] px-4 py-0 text-[0.66rem] font-semibold uppercase leading-none tracking-[0.12em] text-white transition hover:border-red-300 hover:shadow-[0_18px_44px_rgba(127,29,29,0.35)] focus-outline"
               >
-                Get Directions
-              </a>
+                View Locations
+              </Link>
               <TrackedLink
                 href={bookingUrl}
                 intent="about_location_booking"
@@ -230,8 +218,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-            {locationPoints.map((item) => (
+          <div className="grid gap-3 sm:grid-cols-2">
+            {contactLocationPoints.map((item) => (
               <article
                 key={item.label}
                 className="rounded-[1.35rem] border border-white/10 bg-black/60 p-4"
@@ -239,7 +227,9 @@ export default function AboutPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
                   {item.label}
                 </p>
-                <p className="mt-3 text-sm text-zinc-200 sm:text-base">{item.value}</p>
+                <p className="mt-3 whitespace-pre-line text-sm text-zinc-200 sm:text-base">
+                  {item.value}
+                </p>
               </article>
             ))}
           </div>

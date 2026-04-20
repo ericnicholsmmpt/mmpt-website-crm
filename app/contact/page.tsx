@@ -113,13 +113,13 @@ export default function ContactPage() {
 
       <LeadCaptureForm source="contact_intent_form" />
 
-      <section className="section-shell rounded-[2rem] p-5 card sm:p-9">
+      <section id="locations" className="section-shell rounded-[2rem] p-5 card sm:p-9">
         <SectionIntro
           kicker="Location and access"
-          title="Based in Atlanta and built for in-person, virtual, and hybrid support."
-          copy="MMPT serves local athletes in person while also supporting remote and hybrid care through the performance platform."
+          title="Serving Atlanta athletes through in-person partner facilities and hybrid support."
+          copy="MMPT serves local athletes at Maven Baseball Lab and The Hill while also supporting remote and hybrid care through the performance platform."
         />
-        <div className="mt-7 grid gap-4 md:grid-cols-3">
+        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {contactLocationPoints.map((item) => (
             <article
               key={item.label}
@@ -128,7 +128,9 @@ export default function ContactPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
                 {item.label}
               </p>
-              <p className="mt-4 text-sm text-zinc-200 sm:text-base">{item.value}</p>
+              <p className="mt-4 whitespace-pre-line text-sm text-zinc-200 sm:text-base">
+                {item.value}
+              </p>
             </article>
           ))}
         </div>

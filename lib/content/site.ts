@@ -614,26 +614,30 @@ export const contactMethods = [
     external: false,
   },
   {
-    title: "Visit Atlanta",
-    value: "1825 MacArthur Blvd NW",
-    copy: "Train, test, and receive care in person while still using the platform for hybrid follow-through.",
-    href: "https://www.google.com/maps/search/?api=1&query=1825+MacArthur+Blvd+NW+Atlanta+GA+30318",
-    cta: "Get Directions",
-    external: true,
+    title: "In-person care",
+    value: "Two Atlanta sites",
+    copy: "Train, test, and receive care at Maven Baseball Lab or The Hill, with platform support between sessions.",
+    href: "#locations",
+    cta: "View Locations",
+    external: false,
   },
 ];
 
 export const contactLocationPoints = [
   {
-    label: "Atlanta facility",
-    value: "1825 MacArthur Blvd NW, Atlanta, GA 30318",
+    label: "Maven Baseball Lab",
+    value: "1825 MacArthur Blvd NW\nAtlanta, GA 30318",
+  },
+  {
+    label: "The Hill",
+    value: "2650 Pleasantdale Rd, Suite 9\nAtlanta, GA 30340",
   },
   {
     label: "Phone",
     value: "(770) 298-5893",
   },
   {
-    label: "Support model",
+    label: "Support Model",
     value: "In-person, virtual, and hybrid delivery through the MMPT performance platform",
   },
 ];
