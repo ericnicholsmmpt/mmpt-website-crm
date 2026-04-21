@@ -13,6 +13,9 @@ export default function SiteFooter() {
             <Link className="text-zinc-200 underline-offset-4 hover:underline" href="/privacy">
               Privacy Policy
             </Link>
+            <Link className="text-zinc-200 underline-offset-4 hover:underline" href="/terms">
+              Terms &amp; Conditions
+            </Link>
             <Link className="text-zinc-200 underline-offset-4 hover:underline" href="/support">
               Support
             </Link>
