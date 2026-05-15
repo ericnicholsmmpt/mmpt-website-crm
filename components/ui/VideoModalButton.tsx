@@ -44,7 +44,7 @@ export default function VideoModalButton({
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className={`inline-flex h-10 items-center justify-center whitespace-nowrap rounded-full border border-white/15 bg-white/[0.03] px-4 text-[0.68rem] font-semibold uppercase leading-none tracking-[0.12em] text-white transition hover:border-red-400/60 hover:bg-red-950/30 focus-outline ${className}`}
+        className={`inline-flex h-10 items-center justify-center whitespace-nowrap rounded-xl border border-white/12 bg-white/[0.02] px-4 text-[0.68rem] font-semibold uppercase leading-none tracking-[0.12em] text-white transition hover:border-white/25 hover:bg-white/[0.05] focus-outline ${className}`}
       >
         {label}
       </button>
@@ -55,7 +55,7 @@ export default function VideoModalButton({
           onClick={() => setOpen(false)}
         >
           <div
-            className="w-full max-w-4xl rounded-[1.75rem] border border-white/10 bg-black p-4 shadow-[0_24px_80px_rgba(0,0,0,0.55)] sm:p-5"
+            className="w-full max-w-4xl rounded-[1.25rem] border border-white/10 bg-black p-4 shadow-[0_18px_48px_rgba(0,0,0,0.45)] sm:p-5"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mb-4 flex min-w-0 flex-wrap items-start justify-between gap-4">
@@ -66,14 +66,14 @@ export default function VideoModalButton({
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-xl text-white transition hover:border-white/30 hover:bg-white/[0.06] focus-outline"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/12 bg-white/[0.02] text-xl text-white transition hover:border-white/25 hover:bg-white/[0.05] focus-outline"
                 aria-label="Close video"
               >
                 ×
               </button>
             </div>
 
-            <div className="overflow-hidden rounded-[1.25rem] border border-white/10 bg-black">
+            <div className="overflow-hidden rounded-[1rem] border border-white/10 bg-black">
               <div className="aspect-[9/16] max-h-[75vh] w-full sm:aspect-video">
                 <iframe
                   className="h-full w-full"

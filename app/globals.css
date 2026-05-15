@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --surface: #030303;
-  --panel: rgba(10, 10, 11, 0.92);
-  --surface-soft: #090909;
+  --surface: #040506;
+  --panel: rgba(12, 13, 15, 0.94);
+  --surface-soft: #0a0b0d;
   --text: #f5f5f5;
   --text-soft: #b1b1b9;
   --accent: #b91c1c;
   --accent-strong: #ef4444;
-  --accent-soft: rgba(185, 28, 28, 0.2);
+  --accent-soft: rgba(185, 28, 28, 0.12);
   --border: rgba(255, 255, 255, 0.09);
-  --shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.4);
 }
 
 @theme inline {
@@ -29,17 +30,13 @@ html {
 }
 
 body {
-  background: radial-gradient(
-      1100px 540px at 10% -15%,
-      rgba(185, 28, 28, 0.2),
-      transparent 46%
-    ),
+  background:
     radial-gradient(
-      900px 500px at 100% 0%,
-      rgba(127, 29, 29, 0.18),
-      transparent 42%
+      1100px 520px at 50% -18%,
+      rgba(255, 255, 255, 0.05),
+      transparent 40%
     ),
-    linear-gradient(180deg, #040404 0%, #090909 100%);
+    linear-gradient(180deg, #050607 0%, #090b0d 52%, #050607 100%);
   color: var(--text);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
   min-height: 100vh;
@@ -61,9 +58,9 @@ body::before {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 72px 72px;
+  background-size: 64px 64px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.95));
-  opacity: 0.18;
+  opacity: 0.14;
 }
 
 .page-frame {
@@ -84,9 +81,9 @@ article {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 15% 30%, rgba(185, 28, 28, 0.07), transparent 24%),
-    radial-gradient(circle at 88% 18%, rgba(127, 29, 29, 0.07), transparent 20%);
-  opacity: 0.65;
+    radial-gradient(circle at 18% 22%, rgba(255, 255, 255, 0.035), transparent 18%),
+    radial-gradient(circle at 82% 14%, rgba(185, 28, 28, 0.04), transparent 14%);
+  opacity: 0.55;
 }
 
 .section-shell {
@@ -99,7 +96,7 @@ article {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   opacity: 1;
   z-index: -1;
   border-radius: inherit;
@@ -108,24 +105,22 @@ article {
 .card {
   border: 1px solid var(--border);
   background:
-    radial-gradient(circle at 0% 0%, rgba(127, 29, 29, 0.14), transparent 24%),
-    radial-gradient(circle at 100% 100%, rgba(127, 29, 29, 0.12), transparent 22%),
     linear-gradient(
-      135deg,
-      rgba(20, 12, 12, 0.82) 0%,
-      rgba(8, 8, 9, 0.97) 38%,
-      rgba(18, 11, 11, 0.84) 100%
+      180deg,
+      rgba(16, 17, 20, 0.96) 0%,
+      rgba(10, 11, 13, 0.98) 52%,
+      rgba(8, 9, 11, 0.98) 100%
     );
   box-shadow: var(--shadow);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
 }
 
 .panel-soft {
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: linear-gradient(
     180deg,
-    rgba(8, 8, 9, 0.97) 0%,
-    rgba(12, 10, 11, 0.95) 100%
+    rgba(11, 12, 14, 0.98) 0%,
+    rgba(8, 9, 11, 0.96) 100%
   );
 }
 
@@ -133,26 +128,26 @@ article {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(10, 10, 12, 0.7);
+  background: rgba(14, 15, 18, 0.92);
   color: #f4f4f5;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
 .pill-active {
-  border-color: rgba(239, 68, 68, 0.85);
-  background: linear-gradient(180deg, rgba(153, 27, 27, 0.95), rgba(122, 20, 20, 0.9));
-  box-shadow: 0 10px 30px rgba(127, 29, 29, 0.3);
+  border-color: rgba(185, 28, 28, 0.55);
+  background: linear-gradient(180deg, rgba(88, 15, 15, 0.84), rgba(52, 12, 12, 0.92));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .kicker {
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   color: var(--accent);
   font-weight: 700;
 }
@@ -197,6 +192,14 @@ article {
   background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
 }
 
+.blog-prose > * + * {
+  margin-top: 1.15rem;
+}
+
+.blog-prose li::marker {
+  color: rgba(248, 113, 113, 0.88);
+}
+
 @media (max-width: 640px) {
   .page-frame::after {
     opacity: 0.45;
@@ -204,17 +207,14 @@ article {
 
   .card {
     background:
-      radial-gradient(circle at 0% 0%, rgba(127, 29, 29, 0.09), transparent 22%),
-      radial-gradient(circle at 100% 100%, rgba(127, 29, 29, 0.08), transparent 20%),
       linear-gradient(
-        135deg,
-        rgba(16, 10, 10, 0.88) 0%,
-        rgba(7, 7, 8, 0.98) 42%,
-        rgba(16, 10, 10, 0.88) 100%
+        180deg,
+        rgba(15, 16, 18, 0.98) 0%,
+        rgba(9, 10, 12, 0.98) 100%
       );
   }
 
   .pill {
-    background: rgba(9, 9, 10, 0.82);
+    background: rgba(12, 13, 16, 0.95);
   }
 }

@@ -4,7 +4,7 @@ import { bookingUrl } from "../../lib/content/site";
 
 export default function HomeHero() {
   return (
-    <section className="relative min-h-[82vh] overflow-hidden border-b border-red-800/40 bg-black sm:min-h-[90vh]">
+    <section className="relative min-h-[82vh] overflow-hidden border-b border-white/10 bg-black sm:min-h-[90vh]">
       <Image
         src="/images/home-hero.jpeg"
         alt="Sports physical therapist guiding an athlete through movement assessment at Movement Medicine in Atlanta"
@@ -15,22 +15,22 @@ export default function HomeHero() {
         className="absolute inset-0 h-full w-full object-cover object-[76%_center] sm:object-[72%_center]"
       />
 
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,4,5,0.96)_0%,rgba(4,4,5,0.9)_34%,rgba(4,4,5,0.64)_62%,rgba(4,4,5,0.76)_100%)] sm:bg-[linear-gradient(90deg,rgba(4,4,5,0.98)_0%,rgba(4,4,5,0.95)_28%,rgba(4,4,5,0.76)_52%,rgba(4,4,5,0.28)_74%,rgba(4,4,5,0.56)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,6,7,0.98)_0%,rgba(5,6,7,0.92)_38%,rgba(5,6,7,0.72)_64%,rgba(5,6,7,0.82)_100%)] sm:bg-[linear-gradient(90deg,rgba(5,6,7,0.99)_0%,rgba(5,6,7,0.96)_30%,rgba(5,6,7,0.8)_54%,rgba(5,6,7,0.36)_76%,rgba(5,6,7,0.62)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black via-black/75 to-transparent" />
 
-      <div className="relative mx-auto flex min-h-[82vh] max-w-7xl items-end px-4 pb-16 pt-28 sm:min-h-[90vh] sm:items-center sm:px-6 sm:pb-20 sm:pt-32 lg:px-8">
-        <div className="max-w-md sm:max-w-xl">
+      <div className="relative mx-auto flex min-h-[82vh] w-full max-w-[1440px] items-end px-4 pb-14 pt-28 sm:min-h-[90vh] sm:items-center sm:px-7 sm:pb-18 sm:pt-32 lg:px-10 xl:px-12 2xl:px-14">
+        <div className="max-w-md sm:max-w-[34rem]">
           <p className="kicker">Sports medicine + athlete performance</p>
-          <h1 className="mt-4 text-[2rem] font-bold leading-[1] tracking-tight text-zinc-400 heading sm:text-5xl">
+          <h1 className="mt-4 text-[1.85rem] font-bold leading-[0.98] tracking-tight text-zinc-300 heading sm:text-[3.9rem]">
             Data-Driven Decisions
             <span className="mt-2 block text-white">Data-Proven Systems</span>
           </h1>
 
-          <div className="mt-5 h-1.5 w-44 overflow-hidden rounded-full bg-zinc-800 sm:mt-6 sm:w-60">
-            <div className="h-full w-28 rounded-full bg-red-600 sm:w-40" />
+          <div className="mt-5 h-px w-44 overflow-hidden bg-white/15 sm:mt-6 sm:w-60">
+            <div className="h-full w-28 bg-red-600 sm:w-40" />
           </div>
 
-          <p className="mt-5 max-w-lg text-base text-zinc-300 sm:mt-6 sm:text-xl">
+          <p className="mt-5 max-w-xl text-[0.98rem] text-zinc-300 sm:mt-6 sm:text-[1.08rem]">
             We turn objective testing into clear sports performance and return-to-play decisions.
           </p>
 
@@ -39,7 +39,7 @@ export default function HomeHero() {
               href={`${bookingUrl}&service=athlete_assessment`}
               intent="hero_assessment"
               label="Book Athlete Assessment"
-              className="px-6 py-3 text-xs"
+              className="px-5 py-2.5 text-[0.72rem]"
             >
               Book Athlete Assessment
             </TrackedLink>
@@ -48,7 +48,7 @@ export default function HomeHero() {
               intent="hero_pt"
               label="Book Sports PT"
               variant="ghost"
-              className="px-6 py-3 text-xs"
+              className="px-5 py-2.5 text-[0.72rem]"
             >
               Book Sports PT
             </TrackedLink>

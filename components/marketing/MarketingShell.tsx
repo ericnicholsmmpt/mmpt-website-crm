@@ -17,7 +17,7 @@ export default function MarketingShell({
     <div className="page-frame min-h-screen text-zinc-100">
       <SiteHeader overlay={overlayHeader} />
       {hero}
-      <main className="mx-auto grid max-w-7xl gap-6 px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
+      <main className="mx-auto grid w-full max-w-[1440px] gap-5 px-4 py-5 sm:px-7 sm:py-7 lg:px-10 xl:px-12 2xl:px-14">
         {children}
       </main>
       <SiteFooter />

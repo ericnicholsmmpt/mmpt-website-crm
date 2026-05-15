@@ -19,20 +19,20 @@ export default function ServicesGrid({
   copy,
 }: ServicesGridProps) {
   return (
-    <section id={id} className="section-shell rounded-[2rem] p-5 card sm:p-9">
+    <section id={id} className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
       <SectionIntro kicker={kicker} title={title} copy={copy} />
 
-      <div className="mt-7 grid gap-4 md:grid-cols-2">
+      <div className="mt-6 grid gap-4 xl:grid-cols-2">
         {services.map((service) => (
           <article
             key={service.slug}
-            className="min-w-0 flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-white/10 bg-black/60"
+            className="min-w-0 flex h-full flex-col overflow-hidden rounded-[1.2rem] border border-white/10 bg-black/55"
           >
             <div className="relative border-b border-white/10">
               {service.slug !== "remote-coaching-and-follow-up" &&
               service.slug !== "precision-arm-care-program" ? (
                 <div
-                  className={`pill absolute z-20 shrink-0 whitespace-nowrap bg-black/80 px-3 py-1.5 text-[0.56rem] tracking-[0.14em] shadow-[0_12px_28px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:text-[0.64rem] ${
+                  className={`pill absolute z-20 shrink-0 whitespace-nowrap bg-[#0d0f12]/95 px-3 py-1 text-[0.54rem] tracking-[0.1em] shadow-[0_10px_20px_rgba(0,0,0,0.2)] backdrop-blur-sm sm:text-[0.6rem] ${
                     service.badgeClassName ?? "left-3 top-3 sm:left-4 sm:top-4"
                   }`}
                 >
@@ -42,8 +42,8 @@ export default function ServicesGrid({
                 </div>
               ) : null}
               {service.mediaPhones?.length ? (
-                <div className="relative h-[12.5rem] overflow-hidden bg-[radial-gradient(circle_at_top,rgba(127,29,29,0.22),transparent_36%),linear-gradient(180deg,rgba(15,6,7,0.98),rgba(28,8,8,0.96))] sm:h-[15rem]">
-                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_35%,rgba(185,28,28,0.12)_100%)]" />
+                <div className="relative h-[12.5rem] overflow-hidden bg-[linear-gradient(180deg,rgba(12,14,17,0.98),rgba(6,7,9,0.98))] sm:h-[15rem]">
+                  <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.045),transparent_36%,rgba(185,28,28,0.06)_100%)]" />
                   <div className="relative z-10 flex h-full items-center justify-evenly gap-2 px-3 sm:gap-3 sm:px-5">
                     {service.mediaPhones.map((phone) => {
                       return (
@@ -55,10 +55,10 @@ export default function ServicesGrid({
                           <div className="pointer-events-none absolute -left-[0.06rem] top-[33%] h-14 w-[0.08rem] rounded-full bg-[linear-gradient(180deg,rgba(243,244,246,0.6),rgba(108,115,128,0.92))]" />
                           <div className="pointer-events-none absolute -right-[0.06rem] top-[27%] h-16 w-[0.08rem] rounded-full bg-[linear-gradient(180deg,rgba(243,244,246,0.62),rgba(108,115,128,0.92))]" />
 
-                          <div className="relative h-full rounded-[1.3rem] bg-[linear-gradient(145deg,rgba(226,228,233,0.96)_0%,rgba(125,131,141,0.94)_9%,rgba(15,17,21,1)_12%,rgba(7,8,10,1)_84%,rgba(150,156,166,0.9)_100%)] p-[0.08rem] shadow-[0_22px_54px_rgba(0,0,0,0.42)] ring-1 ring-white/10">
-                            <div className="pointer-events-none absolute inset-[0.04rem] rounded-[1.22rem] border border-black/70" />
-                            <div className="relative h-full rounded-[1.2rem] bg-black p-[0.09rem]">
-                              <div className="relative h-full overflow-hidden rounded-[1.06rem] border border-white/5 bg-black shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+                          <div className="relative h-full rounded-[1rem] bg-[linear-gradient(145deg,rgba(226,228,233,0.9)_0%,rgba(125,131,141,0.9)_9%,rgba(15,17,21,1)_12%,rgba(7,8,10,1)_84%,rgba(150,156,166,0.86)_100%)] p-[0.08rem] shadow-[0_14px_34px_rgba(0,0,0,0.32)] ring-1 ring-white/8">
+                            <div className="pointer-events-none absolute inset-[0.04rem] rounded-[0.94rem] border border-black/70" />
+                            <div className="relative h-full rounded-[0.92rem] bg-black p-[0.09rem]">
+                              <div className="relative h-full overflow-hidden rounded-[0.8rem] border border-white/5 bg-black shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
                                 <div className="pointer-events-none absolute left-1/2 top-[0.22rem] z-20 h-[0.16rem] w-8 -translate-x-1/2 rounded-full bg-zinc-700/85" />
 
                                 <div className="absolute inset-0">
@@ -91,7 +91,7 @@ export default function ServicesGrid({
                   <div
                     className={`absolute inset-0 z-10 ${
                       service.imageOverlayClassName ??
-                      "bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]"
+                      "bg-[linear-gradient(180deg,rgba(4,5,6,0.08)_0%,rgba(4,5,6,0.24)_42%,rgba(4,5,6,0.9)_100%)]"
                     }`}
                   />
                   <Image
@@ -105,52 +105,49 @@ export default function ServicesGrid({
                 </>
               )}
             </div>
-            <div className="min-w-0 flex grow flex-col p-5">
-              <p className="min-w-0 text-[0.68rem] font-semibold uppercase leading-tight tracking-[0.16em] text-red-300 sm:text-xs sm:tracking-[0.2em]">
+            <div className="min-w-0 flex grow flex-col p-4 sm:p-5">
+              <p className="min-w-0 text-[0.66rem] font-semibold uppercase leading-tight tracking-[0.12em] text-red-300 sm:text-[0.7rem]">
                 {service.tag}
               </p>
-              <h3 className="mt-4 text-xl font-semibold heading sm:text-2xl">{service.title}</h3>
-              <p className="mt-3 text-sm text-zinc-300 sm:text-base">
+              <h3 className="mt-3 text-[1.15rem] font-semibold heading sm:text-[1.32rem]">{service.title}</h3>
+              <p className="mt-2.5 text-sm text-zinc-300 sm:text-[0.95rem]">
                 {service.summary}
               </p>
-              <ul className="mt-4 grid grow gap-2 text-sm text-zinc-400">
+              <ul className="mt-4 grow divide-y divide-white/10 border-y border-white/10 text-sm text-zinc-400">
                 {service.bullets.map((bullet) => (
-                  <li
-                    key={bullet}
-                    className="rounded-2xl border border-white/10 bg-white/[0.02] px-3 py-3"
-                  >
+                  <li key={bullet} className="py-2.5">
                     {bullet}
                   </li>
                 ))}
               </ul>
               {service.serviceNote ? (
-                <div className="mt-5 rounded-[1rem] border border-amber-400/20 bg-amber-500/10 px-3 py-3">
-                  <p className="text-sm text-amber-50/90">
+                <div className="mt-4 border-l border-amber-400/35 bg-amber-500/5 px-3 py-2">
+                  <p className="text-sm text-amber-50/90 sm:text-[0.92rem]">
                     {service.serviceNote}
                   </p>
                 </div>
               ) : null}
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-5 flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
                 <TrackedLink
                   href={service.ctaHref ?? `${bookingUrl}&service=${service.intent}`}
                   intent={service.intent}
                   label={service.cta}
-                  className="h-10 w-full px-4 py-0 text-[0.66rem] leading-none tracking-[0.12em] sm:w-auto"
+                  className="h-10 w-full px-4 py-0 text-[0.64rem] leading-none tracking-[0.08em] sm:w-auto"
                 >
                   {service.cta}
                 </TrackedLink>
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-end">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end">
                   <Link
                     href={`/services#detail-${service.slug}`}
-                    className="pill h-10 w-full px-4 py-0 text-center text-[0.66rem] tracking-[0.12em] focus-outline sm:w-auto"
+                    className="pill h-10 w-full px-4 py-0 text-center text-[0.64rem] tracking-[0.08em] focus-outline sm:w-auto"
                   >
                     Learn More
                   </Link>
-                  <div className="shrink-0 rounded-[1rem] border border-red-400/20 bg-red-950/20 px-3 py-2 text-right">
+                  <div className="shrink-0 border-l border-red-500/30 pl-3 text-left sm:text-right">
                     {service.priceLines.map((priceLine) => (
                       <p
                         key={priceLine}
-                        className="whitespace-nowrap text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-red-100"
+                        className="whitespace-nowrap text-[0.68rem] font-semibold uppercase tracking-[0.08em] text-red-100"
                       >
                         {priceLine}
                       </p>

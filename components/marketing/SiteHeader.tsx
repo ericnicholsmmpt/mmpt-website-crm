@@ -25,18 +25,18 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
   }
 
   const headerClass = overlay
-    ? "fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-black/88 backdrop-blur-xl"
-    : "sticky top-0 z-30 border-b border-white/10 bg-black/95 backdrop-blur-xl";
+    ? "fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#08090bcc] backdrop-blur-xl"
+    : "sticky top-0 z-30 border-b border-white/10 bg-[#08090bf2] backdrop-blur-xl";
   const navLinkClass =
-    "text-sm font-medium text-zinc-300 transition hover:text-white focus-outline";
+    "text-[0.9rem] font-medium text-zinc-300 transition hover:text-white focus-outline";
 
   return (
     <header className={headerClass}>
-      <nav className="mx-auto flex min-w-0 max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex min-w-0 w-full max-w-[1440px] items-center justify-between gap-4 px-4 py-3 sm:px-7 lg:px-10 xl:px-12 2xl:px-14">
         <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
           <Link
             href="/"
-            className="focus-outline flex min-w-0 items-center gap-3 rounded-2xl"
+            className="focus-outline flex min-w-0 items-center gap-3 rounded-xl"
           >
             <div className="relative h-11 w-11 shrink-0 overflow-hidden sm:h-12 sm:w-12">
               <Image
@@ -48,17 +48,17 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
               />
             </div>
             <div className="min-w-0 max-w-[13rem] sm:max-w-[24rem]">
-              <p className="truncate text-[0.8rem] font-semibold leading-tight text-white sm:text-[0.94rem]">
+              <p className="truncate text-[0.76rem] font-semibold leading-tight text-white sm:text-[0.88rem]">
                 Movement Performance and Sports Medicine
               </p>
-              <p className="mt-0.5 hidden text-[0.76rem] leading-tight text-zinc-400 sm:block">
+              <p className="mt-0.5 hidden text-[0.7rem] leading-tight text-zinc-400 sm:block">
                 Sports medicine physical therapy, athlete assessments, and performance training
               </p>
             </div>
           </Link>
         </div>
 
-        <div className="hidden items-center gap-3 text-sm lg:flex">
+          <div className="hidden items-center gap-2.5 text-sm lg:flex">
           {primaryNav.map((item) => (
             <Link key={item.href} href={item.href} className={navLinkClass}>
               {item.label}
@@ -78,7 +78,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
             href="https://dashboard.mmptperformance.com/login"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-8 items-center justify-center rounded-full border border-white/30 px-3 py-0 text-[0.82rem] font-medium leading-none text-white transition hover:border-white hover:bg-white/5 focus-outline"
+            className="inline-flex h-8 items-center justify-center rounded-xl border border-white/16 bg-white/[0.02] px-3 py-0 text-[0.82rem] font-medium leading-none text-white transition hover:border-white/28 hover:bg-white/[0.05] focus-outline"
           >
             MMPT Platform
           </a>
@@ -99,7 +99,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             onClick={toggleMobileMenu}
-            className="inline-flex items-center gap-2 rounded-full border border-white/25 px-3 py-2 text-sm font-medium text-white transition hover:border-white hover:bg-white/5 focus-outline"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/16 bg-white/[0.02] px-3 py-2 text-sm font-medium text-white transition hover:border-white/28 hover:bg-white/[0.05] focus-outline"
           >
             <span className="text-xs uppercase tracking-[0.12em]">Menu</span>
             <span className="flex flex-col gap-1">
@@ -113,13 +113,13 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
 
       {mobileOpen ? (
         <div id="mobile-nav" className="border-t border-white/10 bg-black/96 lg:hidden">
-          <div className="mx-auto grid max-w-7xl gap-3 px-4 py-4 sm:px-6">
+          <div className="mx-auto grid w-full max-w-[1440px] gap-3 px-4 py-4 sm:px-7 lg:px-10">
             {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={closeMobileMenu}
-                className="rounded-2xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm font-medium text-zinc-200 transition hover:border-white/20 hover:bg-white/[0.04] focus-outline"
+                className="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm font-medium text-zinc-200 transition hover:border-white/20 hover:bg-white/[0.04] focus-outline"
               >
                 {item.label}
               </Link>
@@ -130,7 +130,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
               target="_blank"
               rel="noreferrer"
               onClick={closeMobileMenu}
-              className="inline-flex items-center justify-center rounded-2xl border border-white/25 px-4 py-3 text-sm font-medium text-white transition hover:border-white hover:bg-white/5 focus-outline"
+              className="inline-flex items-center justify-center rounded-xl border border-white/16 bg-white/[0.02] px-4 py-3 text-sm font-medium text-white transition hover:border-white/28 hover:bg-white/[0.05] focus-outline"
             >
               MMPT Platform
             </a>

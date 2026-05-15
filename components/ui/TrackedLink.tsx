@@ -47,11 +47,11 @@ export function TrackedLink({
   variant = "button",
 }: TrackedLinkProps) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.16em] transition-all focus-outline";
+    "inline-flex items-center justify-center rounded-[0.8rem] px-4 py-2.5 text-[0.78rem] font-semibold uppercase tracking-[0.1em] transition-all focus-outline";
   const primary =
-    "border border-red-400/60 bg-[linear-gradient(180deg,rgba(185,28,28,0.98),rgba(127,29,29,0.96))] text-white hover:border-red-300 hover:shadow-[0_18px_44px_rgba(127,29,29,0.35)]";
+    "border border-red-500/45 bg-[linear-gradient(180deg,rgba(150,25,25,0.94),rgba(96,18,18,0.96))] text-white hover:border-red-400/70 hover:bg-[linear-gradient(180deg,rgba(168,30,30,0.94),rgba(112,20,20,0.96))]";
   const ghost =
-    "border border-white/15 bg-white/[0.03] text-white hover:border-red-400/60 hover:bg-red-950/30";
+    "border border-white/12 bg-white/[0.02] text-white hover:border-white/25 hover:bg-white/[0.05]";
   const classes =
     variant === "ghost"
       ? `${base} ${ghost} ${className}`

@@ -14,11 +14,11 @@ export default function PageHero({
   title,
   copy,
   actions,
-  titleClassName = "text-2xl sm:text-[3.7rem]",
-  copyClassName = "text-sm sm:text-[1rem]",
+  titleClassName = "text-[1.8rem] sm:text-[3rem]",
+  copyClassName = "text-sm sm:text-[0.96rem]",
 }: PageHeroProps) {
   return (
-    <section className="section-shell rounded-[2rem] p-5 card sm:p-9">
+    <section className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
       <p className="kicker">{kicker}</p>
       <h1
         className={`mt-3 max-w-5xl font-bold leading-[0.98] heading ${titleClassName}`}

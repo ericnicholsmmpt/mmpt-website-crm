@@ -15,22 +15,19 @@ export default function ProcessGrid({
   copy,
 }: ProcessGridProps) {
   return (
-    <section id={id} className="section-shell rounded-[2rem] p-5 card sm:p-9">
-      <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+    <section id={id} className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
+      <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <SectionIntro kicker={kicker} title={title} copy={copy} />
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2">
           {processSteps.map((item) => (
-            <article
-              key={item.step}
-              className="rounded-[1.6rem] border border-white/10 bg-black/60 p-5"
-            >
+            <article key={item.step} className="rounded-[1rem] border border-white/10 bg-black/45 p-4">
               <div className="flex flex-wrap items-center gap-3">
-                <div className="pill pill-active min-w-[3.2rem] justify-center px-3 py-1.5">
+                <div className="pill pill-active min-w-[2.8rem] justify-center px-2.5 py-1">
                   {item.step}
                 </div>
-                <h3 className="text-xl font-semibold heading sm:text-2xl">{item.title}</h3>
+                <h3 className="text-[1.05rem] font-semibold heading sm:text-[1.2rem]">{item.title}</h3>
               </div>
-              <p className="mt-3 text-sm text-zinc-300 sm:text-base">{item.copy}</p>
+              <p className="mt-2.5 text-sm text-zinc-300 sm:text-[0.95rem]">{item.copy}</p>
             </article>
           ))}
         </div>

@@ -15,16 +15,16 @@ const reviewHighlights = [
 
 export default function ProofSection() {
   return (
-    <section id="proof" className="section-shell rounded-[2rem] p-7 card sm:p-9">
+    <section id="proof" className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
       <SectionIntro
         kicker="Built by Athletes for Athletes"
         title="Sports medicine care backed by objective testing, premium facilities, and data-proven systems."
         copy="MMPT combines high-level clinical care, objective testing, and platform-guided programming to help athletes recover, perform, and return with confidence."
       />
 
-      <div className="mt-7 grid gap-4 lg:grid-cols-[1.12fr_0.88fr]">
-        <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-black/65">
-          <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
+      <div className="mt-6 grid gap-4 lg:grid-cols-[1.18fr_0.82fr]">
+        <div className="relative overflow-hidden rounded-[1.25rem] border border-white/10 bg-black/65">
+          <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.06)_0%,rgba(0,0,0,0.22)_42%,rgba(5,6,7,0.88)_100%)]" />
           <Image
             src="/images/trusted-care.jpeg"
             alt="Movement Medicine clinician working with an athlete during sports rehab in Atlanta"
@@ -36,20 +36,20 @@ export default function ProofSection() {
         </div>
 
         <div className="grid gap-4">
-          <article className="rounded-[1.5rem] border border-white/10 bg-black/60 p-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
+          <article className="rounded-[1rem] border border-white/10 bg-black/45 p-4">
+            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-red-300">
               5-star Google rating
             </p>
-            <h3 className="mt-3 text-2xl font-semibold heading">Trusted by athletes and families</h3>
+            <h3 className="mt-3 text-[1.22rem] font-semibold heading sm:text-[1.45rem]">Trusted by athletes and families</h3>
 
-            <div className="mt-4 grid gap-3">
+            <div className="mt-4 divide-y divide-white/10 border-y border-white/10">
               {reviewHighlights.map((review) => (
                 <div
                   key={review.quote}
-                  className="rounded-[1.15rem] border border-white/10 bg-white/[0.03] p-4"
+                  className="py-4"
                 >
-                  <p className="text-sm font-medium text-white sm:text-[0.95rem]">{review.quote}</p>
-                  <p className="mt-2 text-xs uppercase tracking-[0.18em] text-zinc-400">
+                  <p className="text-sm font-medium text-white sm:text-[0.92rem]">{review.quote}</p>
+                  <p className="mt-2 text-[0.68rem] uppercase tracking-[0.12em] text-zinc-400">
                     {review.author}
                   </p>
                 </div>

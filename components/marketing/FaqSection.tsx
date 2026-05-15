@@ -15,14 +15,14 @@ export default function FaqSection({
   items,
 }: FaqSectionProps) {
   return (
-    <section className="section-shell rounded-[2rem] p-5 card sm:p-9">
+    <section className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
       <SectionIntro kicker={kicker} title={title} copy={copy} />
 
-      <div className="mt-7 grid gap-4">
+      <div className="mt-6 grid gap-3">
         {items.map((item) => (
           <details
             key={item.question}
-            className="group rounded-[1.45rem] border border-white/10 bg-black/60 p-5"
+            className="group rounded-[1.1rem] border border-white/10 bg-black/55 p-5"
           >
             <summary className="cursor-pointer list-none text-lg font-semibold heading sm:text-xl">
               {item.question}
