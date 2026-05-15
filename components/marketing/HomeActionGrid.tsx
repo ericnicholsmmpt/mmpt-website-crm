@@ -9,6 +9,8 @@ const actionCards = [
     subtitle: "Pain, injury, return to sport",
     image: "/images/sports-pt-current.jpeg",
     imageClassName: "object-[56%_58%]",
+    overlayClassName:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]",
     href: `${bookingUrl}&service=pt`,
     intent: "home_card_pt",
     label: "Book PT",
@@ -16,8 +18,10 @@ const actionCards = [
   {
     title: "Athlete Assessment",
     subtitle: "Force plate, movement, next-step clarity",
-    image: "/images/athlete-assessment.jpeg",
-    imageClassName: "object-center",
+    image: "/images/mmpt-performance-dashboard-laptop-hero.png",
+    imageClassName: "object-[58%_38%] brightness-[1.08] contrast-[1.06]",
+    overlayClassName:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.03)_0%,rgba(0,0,0,0.16)_38%,rgba(20,4,4,0.72)_100%)]",
     href: `${bookingUrl}&service=athlete_assessment`,
     intent: "home_card_assessment",
     label: "Book Assessment",
@@ -27,6 +31,8 @@ const actionCards = [
     subtitle: "Throwing durability and arm support",
     image: "/images/arm-care-clean.jpeg",
     imageClassName: "object-[62%_center]",
+    overlayClassName:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]",
     href: `${bookingUrl}&service=arm_care`,
     intent: "home_card_arm_care",
     label: "Book Arm Capacity Assessment",
@@ -58,7 +64,7 @@ export default function HomeActionGrid() {
             className="overflow-hidden rounded-[1.7rem] border border-white/10 bg-black/65"
           >
             <div className="relative border-b border-white/10">
-              <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
+              <div className={`absolute inset-0 z-10 ${card.overlayClassName}`} />
               <Image
                 src={card.image}
                 alt={`${card.title} session at Movement Medicine Performance & PT in Atlanta`}

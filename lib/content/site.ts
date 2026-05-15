@@ -121,6 +121,9 @@ export type ServiceDefinition = {
   shortTitle: string;
   tag: string;
   image: string;
+  imageClassName?: string;
+  imageOverlayClassName?: string;
+  badgeClassName?: string;
   priceLines: string[];
   serviceNote?: string;
   ctaHref?: string;
@@ -193,7 +196,11 @@ export const services: ServiceDefinition[] = [
     title: "Baseball Athlete Assessment",
     shortTitle: "Baseball Athlete Assessment",
     tag: "Data-driven evaluation",
-    image: "/images/athlete-assessment.jpeg",
+    image: "/images/mmpt-performance-dashboard-laptop-hero.png",
+    imageClassName: "object-[58%_36%] brightness-[1.08] contrast-[1.08]",
+    imageOverlayClassName:
+      "bg-[linear-gradient(180deg,rgba(0,0,0,0.03)_0%,rgba(0,0,0,0.14)_38%,rgba(20,4,4,0.68)_100%)]",
+    badgeClassName: "left-4 top-4 px-3.5 py-1.5 sm:left-5 sm:top-5",
     priceLines: ["$250"],
     serviceNote:
       "MMPT also offers sport-specific athlete assessments beyond baseball.",
@@ -292,27 +299,11 @@ export const services: ServiceDefinition[] = [
     title: "Remote Support + Programming",
     shortTitle: "Remote Support",
     tag: "Platform-guided continuity",
-    image: "/images/remote-support-one.jpeg",
+    image: "/images/remote-support-hero.png",
     priceLines: ["1 month: $200", "3 months: $150/month"],
     serviceNote:
       "Athlete Movement Assessment required first so your program can be individualized to your assessment findings, where you are in the season, and the goals that matter most to your game.",
-    mediaPhones: [
-      {
-        src: "/images/platform-week-1.jpeg",
-        alt: "MMPT platform week and day programming view",
-        fit: "cover",
-      },
-      {
-        src: "/images/platform-third-screen.jpeg",
-        alt: "MMPT platform strength block and exercise list view",
-        fit: "cover",
-      },
-      {
-        src: "/images/remote-support.jpeg",
-        alt: "MMPT platform exercise detail and demo view",
-        fit: "contain",
-      },
-    ],
+    imageClassName: "object-[center_12%]",
     summary:
       "A hybrid support model for athletes who need clear programming, accountability, and progress outside in-person visits.",
     bullets: [
@@ -399,30 +390,12 @@ export const services: ServiceDefinition[] = [
     title: "Precision Arm Care Program",
     shortTitle: "Precision Arm Care Program",
     tag: "Assessment-driven arm durability",
-    image: "/images/precision-arm-care-overview.jpeg",
+    image: "/images/precision-arm-care-hero.png",
     priceLines: ["$49/month"],
     serviceNote:
       "Baseball Arm Capacity Assessment required before starting the Precision Arm Care Program.",
     ctaHref: `${bookingUrl}&service=arm_care`,
-    mediaPhones: [
-      {
-        src: "/images/precision-arm-care-overview.jpeg",
-        alt: "Precision Arm Care Program overview screen in the MMPT platform",
-        fit: "cover",
-        imageClassName: "translate-y-3",
-      },
-      {
-        src: "/images/precision-arm-care-calendar.jpeg",
-        alt: "Precision Arm Care Program schedule and calendar screen in the MMPT platform",
-        fit: "cover",
-        imageClassName: "translate-y-3",
-      },
-      {
-        src: "/images/precision-arm-care-exercise.jpeg",
-        alt: "Precision Arm Care Program exercise detail screen in the MMPT platform",
-        fit: "contain",
-      },
-    ],
+    imageClassName: "object-[center_12%]",
     summary:
       "A monthly arm-care program built from Baseball Arm Capacity Assessment results, not generic routines. Precision Arm Care turns key test findings into targeted injury-prevention exercises, recovery structure, and durability support that match the athlete's actual needs.",
     bullets: [
