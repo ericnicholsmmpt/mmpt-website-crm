@@ -31,7 +31,11 @@ export default function ServicesGrid({
             <div className="relative border-b border-white/10">
               {service.slug !== "remote-coaching-and-follow-up" &&
               service.slug !== "precision-arm-care-program" ? (
-                <div className="pill absolute left-3 top-3 z-20 shrink-0 whitespace-nowrap bg-black/80 px-3 py-1.5 text-[0.56rem] tracking-[0.14em] shadow-[0_12px_28px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:left-4 sm:top-4 sm:text-[0.64rem]">
+                <div
+                  className={`pill absolute z-20 shrink-0 whitespace-nowrap bg-black/80 px-3 py-1.5 text-[0.56rem] tracking-[0.14em] shadow-[0_12px_28px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:text-[0.64rem] ${
+                    service.badgeClassName ?? "left-3 top-3 sm:left-4 sm:top-4"
+                  }`}
+                >
                   {service.slug === "sports-medicine-physical-therapy"
                     ? "Movement Medicine"
                     : "Movement Performance"}
@@ -47,34 +51,33 @@ export default function ServicesGrid({
                           key={phone.src}
                           className="relative aspect-[9/19.2] h-[92%] shrink-0"
                         >
-                          <div className="pointer-events-none absolute -left-[0.08rem] top-[23%] h-6 w-[0.14rem] rounded-full bg-[linear-gradient(180deg,rgba(238,242,247,0.45),rgba(67,76,89,0.92))]" />
-                          <div className="pointer-events-none absolute -left-[0.08rem] top-[31%] h-10 w-[0.14rem] rounded-full bg-[linear-gradient(180deg,rgba(238,242,247,0.35),rgba(48,56,68,0.92))]" />
-                          <div className="pointer-events-none absolute -right-[0.08rem] top-[28%] h-12 w-[0.14rem] rounded-full bg-[linear-gradient(180deg,rgba(238,242,247,0.35),rgba(48,56,68,0.92))]" />
+                          <div className="pointer-events-none absolute -left-[0.06rem] top-[22%] h-8 w-[0.08rem] rounded-full bg-[linear-gradient(180deg,rgba(243,244,246,0.72),rgba(120,126,138,0.92))]" />
+                          <div className="pointer-events-none absolute -left-[0.06rem] top-[33%] h-14 w-[0.08rem] rounded-full bg-[linear-gradient(180deg,rgba(243,244,246,0.6),rgba(108,115,128,0.92))]" />
+                          <div className="pointer-events-none absolute -right-[0.06rem] top-[27%] h-16 w-[0.08rem] rounded-full bg-[linear-gradient(180deg,rgba(243,244,246,0.62),rgba(108,115,128,0.92))]" />
 
-                          <div className="relative h-full rounded-[1.9rem] bg-[linear-gradient(145deg,rgba(130,136,146,0.92)_0%,rgba(48,54,63,0.98)_16%,rgba(18,20,24,1)_42%,rgba(11,12,15,1)_58%,rgba(74,80,90,0.96)_100%)] p-[0.14rem] shadow-[0_22px_54px_rgba(0,0,0,0.52)] ring-1 ring-white/8">
-                            <div className="pointer-events-none absolute inset-[0.06rem] rounded-[1.82rem] border border-white/12 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.01)_18%,rgba(0,0,0,0.14)_100%)]" />
-                            <div className="relative h-full rounded-[1.78rem] bg-[linear-gradient(180deg,rgba(14,16,19,1),rgba(6,7,9,1))] p-[0.12rem]">
-                              <div className="relative h-full overflow-hidden rounded-[1.62rem] border border-white/7 bg-black shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
-                                <div className="pointer-events-none absolute inset-x-[30%] top-[0.34rem] z-20 h-[0.72rem] rounded-full bg-black shadow-[0_2px_8px_rgba(0,0,0,0.7)] ring-1 ring-white/8" />
-                                <div className="pointer-events-none absolute left-1/2 top-[0.62rem] z-20 h-[0.14rem] w-7 -translate-x-1/2 rounded-full bg-zinc-800/90" />
-                                <div className="pointer-events-none absolute right-[36%] top-[0.47rem] z-20 h-1.5 w-1.5 rounded-full bg-zinc-700/95 ring-1 ring-black/60" />
+                          <div className="relative h-full rounded-[1.3rem] bg-[linear-gradient(145deg,rgba(226,228,233,0.96)_0%,rgba(125,131,141,0.94)_9%,rgba(15,17,21,1)_12%,rgba(7,8,10,1)_84%,rgba(150,156,166,0.9)_100%)] p-[0.08rem] shadow-[0_22px_54px_rgba(0,0,0,0.42)] ring-1 ring-white/10">
+                            <div className="pointer-events-none absolute inset-[0.04rem] rounded-[1.22rem] border border-black/70" />
+                            <div className="relative h-full rounded-[1.2rem] bg-black p-[0.09rem]">
+                              <div className="relative h-full overflow-hidden rounded-[1.06rem] border border-white/5 bg-black shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]">
+                                <div className="pointer-events-none absolute left-1/2 top-[0.22rem] z-20 h-[0.16rem] w-8 -translate-x-1/2 rounded-full bg-zinc-700/85" />
 
-                                <Image
-                                  src={phone.src}
-                                  alt={phone.alt}
-                                  width={700}
-                                  height={1400}
-                                  sizes="(min-width: 640px) 14rem, 26vw"
-                                  className={`h-full w-full ${
-                                    phone.fit === "contain"
-                                      ? "object-contain object-center"
-                                      : "object-cover object-top"
-                                  } ${phone.imageClassName ?? ""}`}
-                                />
+                                <div className="absolute inset-0">
+                                  <Image
+                                    src={phone.src}
+                                    alt={phone.alt}
+                                    width={700}
+                                    height={1400}
+                                    sizes="(min-width: 640px) 14rem, 26vw"
+                                    className={`h-full w-full ${
+                                      phone.fit === "contain"
+                                        ? "object-contain object-center"
+                                        : "object-cover object-top"
+                                    } ${phone.imageClassName ?? ""}`}
+                                  />
+                                </div>
 
-                                <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(112deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.06)_14%,transparent_30%,transparent_70%,rgba(255,255,255,0.05)_86%,rgba(255,255,255,0.1)_100%)] opacity-40 mix-blend-screen" />
-                                <div className="pointer-events-none absolute inset-y-4 left-0 z-10 w-[14%] bg-[linear-gradient(90deg,rgba(255,255,255,0.08),transparent)] opacity-25" />
-                                <div className="pointer-events-none absolute inset-x-[37%] bottom-1.5 z-20 h-[0.18rem] w-[26%] rounded-full bg-white/16 shadow-[0_0_12px_rgba(255,255,255,0.08)]" />
+                                <div className="pointer-events-none absolute inset-0 z-10 bg-[linear-gradient(108deg,rgba(255,255,255,0.07)_0%,rgba(255,255,255,0.025)_14%,transparent_28%,transparent_72%,rgba(255,255,255,0.03)_88%,rgba(255,255,255,0.07)_100%)] opacity-35 mix-blend-screen" />
+                                <div className="pointer-events-none absolute inset-x-[36%] bottom-1.5 z-20 h-[0.16rem] w-[28%] rounded-full bg-white/14" />
                               </div>
                             </div>
                           </div>
@@ -85,14 +88,19 @@ export default function ServicesGrid({
                 </div>
               ) : (
                 <>
-                  <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
+                  <div
+                    className={`absolute inset-0 z-10 ${
+                      service.imageOverlayClassName ??
+                      "bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]"
+                    }`}
+                  />
                   <Image
                     src={service.image}
                     alt={`${service.title} support at Movement Medicine Performance & PT in Atlanta`}
                     width={1200}
                     height={900}
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="h-[12.5rem] w-full object-cover sm:h-[15rem]"
+                    className={`h-[12.5rem] w-full object-cover sm:h-[15rem] ${service.imageClassName ?? ""}`}
                   />
                 </>
               )}
