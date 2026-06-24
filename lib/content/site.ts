@@ -4,8 +4,9 @@ export const bookingUrl =
 export const primaryNav = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Teams", href: "/services#team-assessments" },
   { label: "About", href: "/about" },
-  { label: "Team", href: "/team" },
+  { label: "Our Team", href: "/team" },
   { label: "Contact", href: "/contact" },
 ];
 

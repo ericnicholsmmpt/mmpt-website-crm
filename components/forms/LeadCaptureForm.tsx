@@ -7,11 +7,12 @@ import { TrackedLink } from "../ui/TrackedLink";
 type FormStatus = "idle" | "sending" | "sent" | "error";
 
 const interests = [
-  "Sports Medicine Physical Therapy",
   "Athlete Assessment",
-  "Arm Care / Rehabilitation",
-  "Movement Correction",
-  "Team / Travel Athlete Support",
+  "Sports PT / Return to Sport",
+  "Arm Care / Throwing Durability",
+  "Strength & Performance Training",
+  "Remote / Hybrid Programming",
+  "Coach / Team Assessment",
 ];
 
 const nextStepPoints = [

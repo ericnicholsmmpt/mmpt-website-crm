@@ -17,6 +17,12 @@ const LeadCaptureForm = dynamic(
   () => import("../components/forms/LeadCaptureForm")
 );
 
+const trustBarItems = [
+  "Atlanta sports performance lab",
+  "Force Plate and Motion Capture Testing",
+  "Baseball rehab + return to throwing",
+];
+
 export const metadata: Metadata = buildPageMetadata({
   title: "Sports Physical Therapy, Baseball Rehab, and Athlete Assessment in Atlanta",
   description:
@@ -35,6 +41,18 @@ export default function Home() {
   return (
     <MarketingShell hero={<HomeHero />} overlayHeader>
       <JsonLd data={buildFaqJsonLd(homeFaqs)} />
+      <section className="section-shell pt-0">
+        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 border-y border-white/10 bg-[#08090b]/88 px-4 py-3 text-center text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-zinc-300 sm:px-6 sm:text-[0.7rem]">
+          {trustBarItems.map((item, index) => (
+            <span key={item} className="inline-flex items-center gap-3">
+              <span>{item}</span>
+              {index < trustBarItems.length - 1 ? (
+                <span className="hidden h-1 w-1 rounded-full bg-red-500/70 sm:inline-block" />
+              ) : null}
+            </span>
+          ))}
+        </div>
+      </section>
       <HomeActionGrid />
       <ProofSection />
 

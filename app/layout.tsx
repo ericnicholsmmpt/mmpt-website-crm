@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   applicationName: siteName,
   category: "Sports medicine physical therapy and athlete performance",
   icons: {
-    icon: "/images/icon.jpeg",
-    shortcut: "/images/icon.jpeg",
-    apple: "/images/icon.jpeg",
+    icon: "/images/mmpt-performance-tab-icon.png",
+    shortcut: "/images/mmpt-performance-tab-icon.png",
+    apple: "/images/mmpt-performance-tab-icon.png",
   },
   keywords: [
     "sports physical therapy atlanta",

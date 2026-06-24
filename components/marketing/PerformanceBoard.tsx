@@ -18,6 +18,21 @@ const systemHighlights = [
   },
 ];
 
+const platformScreens = [
+  {
+    src: "/images/mmpt-app-profile-screen.png",
+    alt: "MMPT app profile screen showing baseball movement and arm capacity scores",
+  },
+  {
+    src: "/images/mmpt-app-program-screen.png",
+    alt: "MMPT app program screen showing assigned training and recovery programs",
+  },
+  {
+    src: "/images/mmpt-app-progress-screen.png",
+    alt: "MMPT app progress screen showing movement score and metric breakdowns",
+  },
+];
+
 export default function PerformanceBoard() {
   return (
     <section className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
@@ -71,16 +86,32 @@ export default function PerformanceBoard() {
             </p>
           </div>
 
-          <div className="mx-auto w-full max-w-[14.6rem] sm:max-w-[15.8rem]">
-            <Image
-              src="/images/performance-board-phone.png"
-              alt="MMPT platform phone dashboard showing mobility, strength, and power assessment results"
-              width={718}
-              height={1536}
-              sizes="(min-width: 640px) 15.8rem, 14.6rem"
-              className="h-auto w-full"
-              priority
-            />
+          <div className="grid grid-cols-3 items-end gap-2 sm:gap-3">
+            {platformScreens.map((screen, index) => (
+              <div
+                key={screen.src}
+                className="relative mx-auto w-full max-w-[9rem] sm:max-w-[10.2rem] xl:max-w-[11.4rem]"
+              >
+                <div className="relative aspect-[1320/2682] rounded-[1.35rem] bg-[linear-gradient(145deg,rgba(226,228,233,0.92)_0%,rgba(120,126,138,0.9)_7%,rgba(17,19,23,1)_11%,rgba(5,6,8,1)_86%,rgba(150,156,166,0.84)_100%)] p-[0.12rem] shadow-[0_18px_54px_rgba(0,0,0,0.45)] ring-1 ring-white/10 sm:rounded-[1.75rem]">
+                  <div className="pointer-events-none absolute -left-[0.08rem] top-[21%] h-6 w-[0.09rem] rounded-full bg-zinc-300/70" />
+                  <div className="pointer-events-none absolute -left-[0.08rem] top-[31%] h-10 w-[0.09rem] rounded-full bg-zinc-400/70" />
+                  <div className="pointer-events-none absolute -right-[0.08rem] top-[27%] h-12 w-[0.09rem] rounded-full bg-zinc-400/70" />
+                  <div className="relative h-full overflow-hidden rounded-[1.22rem] border border-black/80 bg-black sm:rounded-[1.58rem]">
+                    <div className="pointer-events-none absolute left-1/2 top-3 z-20 h-1 w-9 -translate-x-1/2 rounded-full bg-black/80 ring-1 ring-white/8 sm:top-4 sm:w-11" />
+                    <Image
+                      src={screen.src}
+                      alt={screen.alt}
+                      width={1320}
+                      height={2698}
+                      sizes="(min-width: 1024px) 10rem, (min-width: 640px) 28vw, 30vw"
+                      className="h-full w-full object-cover object-top"
+                      priority={index === 1}
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(108deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0.025)_16%,transparent_34%,transparent_72%,rgba(255,255,255,0.03)_88%,rgba(255,255,255,0.08)_100%)] opacity-35 mix-blend-screen" />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

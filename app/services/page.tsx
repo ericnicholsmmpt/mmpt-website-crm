@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import MarketingShell from "../../components/marketing/MarketingShell";
 import PageHero from "../../components/marketing/PageHero";
@@ -15,13 +16,6 @@ import {
 } from "../../lib/seo";
 
 const serviceFaqs = services.flatMap((service) => service.faqs);
-const teamPreviewPlayers = [
-  { name: "Player 1", email: "player1@mmptperformance.com", armFeel: "6/10" },
-  { name: "Player 2", email: "player2@mmptperformance.com", armFeel: "8/10" },
-  { name: "Player 3", email: "player3@mmptperformance.com", armFeel: "3/10" },
-  { name: "Player 4", email: "player4@mmptperformance.com", armFeel: "10/10" },
-  { name: "Player 5", email: "player5@mmptperformance.com", armFeel: "8/10" },
-];
 const teamAssessmentEmailHref = `mailto:eric@mmptperformance.com?subject=${encodeURIComponent(
   "Team Assessments Inquiry"
 )}&body=${encodeURIComponent(
@@ -92,7 +86,7 @@ export default function ServicesPage() {
         className="section-shell overflow-hidden rounded-[1.5rem] p-5 card sm:p-7"
       >
         <div className="relative">
-          <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_20rem] xl:items-start 2xl:grid-cols-[minmax(0,1fr)_21rem]">
+          <div className="grid gap-7 xl:grid-cols-[minmax(0,0.88fr)_minmax(34rem,0.92fr)] xl:items-center 2xl:grid-cols-[minmax(0,0.9fr)_minmax(40rem,1fr)]">
             <div className="max-w-[48rem]">
               <p className="kicker">Team Assessments</p>
               <h2 className="mt-2 text-[1.55rem] font-semibold heading sm:text-[2.1rem] xl:text-[2.35rem]">
@@ -120,158 +114,49 @@ export default function ServicesPage() {
                   Coach Visibility
                 </div>
                 <div>
+                  Player Accountability
+                </div>
+                <div>
                   Better Development
                 </div>
               </div>
 
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a
-                  href={teamAssessmentEmailHref}
+                <TrackedLink
+                  href="/contact#book"
+                  intent="team_assessment_contact"
+                  label="Request Team Assessment"
                   className="inline-flex h-10 items-center justify-center rounded-xl border border-red-500/45 bg-[linear-gradient(180deg,rgba(150,25,25,0.94),rgba(96,18,18,0.96))] px-4 py-0 text-[0.64rem] font-semibold uppercase leading-none tracking-[0.08em] text-white transition hover:border-red-400/70 focus-outline"
                 >
-                  Ask About Team Pricing
-                </a>
-                <div className="border-l border-red-500/30 pl-3 sm:text-right">
-                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-red-100">
-                    10+ players + 1 coach platform access
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="xl:pt-4">
-              <div className="mx-auto flex max-w-[16.75rem] justify-start sm:max-w-[17.5rem] xl:ml-auto xl:max-w-[19rem]">
-                <div className="pill bg-[#0d0f12]/95 px-3 py-1 text-[0.54rem] tracking-[0.1em] shadow-[0_10px_20px_rgba(0,0,0,0.2)] backdrop-blur-sm sm:text-[0.6rem]">
-                  Movement Performance
-                </div>
-              </div>
-              <div className="mx-auto mt-3 h-[11.75rem] max-w-[16.75rem] overflow-hidden rounded-[1rem] border border-white/10 bg-[linear-gradient(180deg,rgba(12,13,15,0.98),rgba(7,8,10,0.98))] shadow-[0_14px_36px_rgba(0,0,0,0.3)] sm:h-[12.25rem] sm:max-w-[17.5rem] xl:ml-auto xl:h-[13rem] xl:max-w-[19rem]">
-                <div
-                  className="origin-top-left scale-[0.27] transform-gpu"
-                  style={{ width: "370.4%" }}
+                  Request Team Assessment
+                </TrackedLink>
+                <a
+                  href={teamAssessmentEmailHref}
+                  className="pill h-10 px-4 py-0 text-[0.64rem] tracking-[0.08em] focus-outline"
                 >
-            <div className="border-b border-white/10 px-4 py-4 sm:px-5">
-              <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
-                <div>
-                  <div className="inline-flex items-center gap-2 rounded-[0.9rem] border border-white/10 bg-white/[0.04] px-3 py-2 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-zinc-200">
-                    <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
-                    Team Management Platform
-                  </div>
-                  <p className="mt-4 text-sm text-zinc-400">Team</p>
-                  <h3 className="mt-1 text-xl font-semibold heading text-white sm:text-2xl">
-                    Demo Team
-                  </h3>
-                  <p className="mt-2 text-sm text-zinc-300">
-                    Week of 2026-03-16 • Compliance 5/5 (100%)
-                  </p>
-                </div>
-
-                <div className="flex w-full flex-col gap-3 md:flex-row xl:max-w-[18rem]">
-                  <div className="flex-1 rounded-[0.9rem] border border-white/10 bg-black/35 px-4 py-3 text-sm text-zinc-500">
-                    Search player name or email...
-                  </div>
-                  <div className="inline-flex items-center justify-center rounded-[0.9rem] border border-white/10 bg-white/[0.06] px-5 py-3 text-sm font-semibold text-white">
-                    Search
-                  </div>
-                </div>
+                  Email Team Pricing
+                </a>
+                <a
+                  href="/files/movement-performance-app-team-price-sheet.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex h-10 items-center justify-center border-l border-red-500/30 pl-3 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-red-100 transition hover:text-white focus-outline sm:text-right"
+                >
+                  View Team Price Sheet
+                </a>
               </div>
             </div>
 
-            <div className="px-4 py-4 sm:px-5">
-              <div className="rounded-[1rem] border border-white/10 bg-black/30 p-3">
-                <div className="flex flex-col gap-3">
-                  <div className="min-w-0 flex-1 rounded-[0.9rem] border border-white/10 bg-black/45 px-4 py-3 text-sm text-white">
-                    Demo Team
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    <div className="rounded-[0.9rem] border border-white/10 bg-black/45 px-4 py-3 text-sm text-white">
-                      03/16/2026
-                    </div>
-                    <div className="rounded-[0.9rem] bg-white px-4 py-3 text-sm font-semibold text-black">
-                      Go
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <div className="rounded-[0.9rem] border border-white/10 bg-black/45 px-4 py-2 text-sm text-white">
-                    Prev Week
-                  </div>
-                  <div className="rounded-[0.9rem] border border-red-400/35 bg-red-950/24 px-4 py-2 text-sm text-white">
-                    This Week
-                  </div>
-                  <div className="rounded-[0.9rem] border border-white/10 bg-black/45 px-4 py-2 text-sm text-white">
-                    Next Week
-                  </div>
-                  <div className="rounded-[0.9rem] border border-white/10 bg-black/45 px-4 py-2 text-sm text-white">
-                    Show Missing Only
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-4 flex flex-wrap gap-2 text-[0.56rem] font-semibold uppercase tracking-[0.22em]">
-                <div className="rounded-[0.9rem] border border-red-400/35 bg-red-950/28 px-4 py-2 text-white">
-                  Players
-                </div>
-                <div className="rounded-[0.9rem] border border-white/10 bg-black/35 px-4 py-2 text-zinc-300">
-                  Player Status Reports
-                </div>
-                <div className="rounded-[0.9rem] border border-white/10 bg-black/35 px-4 py-2 text-zinc-300">
-                  Pitch Log
-                </div>
-                <div className="rounded-[0.9rem] border border-white/10 bg-black/35 px-4 py-2 text-zinc-300">
-                  Trends
-                </div>
-              </div>
-
-              <div className="mt-4 overflow-hidden rounded-[1rem] border border-white/10 bg-[linear-gradient(180deg,rgba(11,12,14,0.98),rgba(8,9,11,0.96))]">
-                <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5 sm:px-4">
-                  <div className="inline-flex items-center gap-2 rounded-[0.9rem] border border-white/10 bg-white/[0.04] px-3 py-2 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-zinc-200">
-                    <span className="h-2.5 w-2.5 rounded-full bg-red-500" />
-                    Players
-                  </div>
-                  <p className="text-sm text-zinc-500">
-                    {teamPreviewPlayers.length} shown
-                  </p>
-                </div>
-
-                <div className="divide-y divide-white/10">
-                  {teamPreviewPlayers.map((player, index) => (
-                    <div
-                      key={player.email}
-                      className="flex flex-col gap-3 px-4 py-3 sm:px-4 md:flex-row md:items-center md:justify-between"
-                    >
-                      <div>
-                        <p className="text-[0.96rem] font-semibold text-white">
-                          {player.name}
-                        </p>
-                        <p className="mt-1 text-sm text-zinc-500">
-                          {player.email}
-                        </p>
-                      </div>
-                      <div className="flex flex-wrap items-center gap-2">
-                        <div className="rounded-[0.9rem] border border-emerald-500/20 bg-emerald-500/10 px-3 py-2 text-sm font-medium text-emerald-300">
-                          Submitted
-                        </div>
-                        <div
-                          className={`rounded-[0.9rem] border px-3 py-2 text-sm font-medium ${
-                            index === 2
-                              ? "border-rose-500/20 bg-rose-500/10 text-rose-200"
-                              : "border-amber-500/20 bg-amber-500/10 text-amber-200"
-                          }`}
-                        >
-                          Arm Feel: {player.armFeel}
-                        </div>
-                        <div className="rounded-[0.9rem] border border-white/10 bg-black/40 px-3 py-2 text-sm font-semibold text-white">
-                          View
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            </div>
+            <div className="xl:pt-0">
+              <div className="relative mx-auto aspect-[2940/1364] w-full max-w-[42rem] overflow-hidden rounded-[1.15rem] border border-white/10 bg-black shadow-[0_18px_50px_rgba(0,0,0,0.36)] xl:ml-auto 2xl:max-w-[48rem]">
+                <Image
+                  src="/images/mmpt-platform-coach-login-preview.png"
+                  alt="Movement Medicine Performance Platform sign-in screen with athlete management system features"
+                  fill
+                  sizes="(min-width: 1536px) 48rem, (min-width: 1280px) 42rem, 100vw"
+                  className="object-cover object-center"
+                />
+                <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/5" />
               </div>
             </div>
           </div>

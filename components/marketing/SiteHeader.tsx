@@ -66,32 +66,32 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
           ))}
 
           <TrackedLink
-            href={bookingUrl}
+            href={`${bookingUrl}&service=athlete_assessment`}
             intent="global_booking"
-            label="Book Appointment"
+            label="Book Assessment"
             className="h-8 px-3 py-0 text-[0.82rem] font-medium leading-none normal-case tracking-normal"
           >
-            Book Now
+            Book Assessment
           </TrackedLink>
 
           <a
             href="https://dashboard.mmptperformance.com/login"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-8 items-center justify-center rounded-xl border border-white/16 bg-white/[0.02] px-3 py-0 text-[0.82rem] font-medium leading-none text-white transition hover:border-white/28 hover:bg-white/[0.05] focus-outline"
+            className="inline-flex h-8 items-center justify-center rounded-xl border border-white/12 bg-white/[0.015] px-3 py-0 text-[0.78rem] font-medium leading-none text-zinc-300 transition hover:border-white/24 hover:bg-white/[0.04] hover:text-white focus-outline"
           >
-            MMPT Platform
+            Client Login
           </a>
         </div>
 
         <div className="shrink-0 flex items-center gap-2 lg:hidden">
           <TrackedLink
-            href={bookingUrl}
+            href={`${bookingUrl}&service=athlete_assessment`}
             intent="global_booking_mobile"
-            label="Book Appointment Mobile"
+            label="Book Assessment Mobile"
             className="h-9 px-3 py-0 text-xs font-medium leading-none normal-case tracking-normal whitespace-nowrap"
           >
-            Book Now
+            Assessment
           </TrackedLink>
 
           <button
@@ -132,7 +132,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
               onClick={closeMobileMenu}
               className="inline-flex items-center justify-center rounded-xl border border-white/16 bg-white/[0.02] px-4 py-3 text-sm font-medium text-white transition hover:border-white/28 hover:bg-white/[0.05] focus-outline"
             >
-              MMPT Platform
+              Client Login
             </a>
           </div>
         </div>

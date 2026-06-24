@@ -20,18 +20,17 @@ export default function HomeHero() {
 
       <div className="relative mx-auto flex min-h-[82vh] w-full max-w-[1440px] items-end px-4 pb-14 pt-28 sm:min-h-[90vh] sm:items-center sm:px-7 sm:pb-18 sm:pt-32 lg:px-10 xl:px-12 2xl:px-14">
         <div className="max-w-md sm:max-w-[34rem]">
-          <p className="kicker">Sports medicine + athlete performance</p>
-          <h1 className="mt-4 text-[1.85rem] font-bold leading-[0.98] tracking-tight text-zinc-300 heading sm:text-[3.9rem]">
-            Data-Driven Decisions
-            <span className="mt-2 block text-white">Data-Proven Systems</span>
+          <p className="kicker">Baseball testing + sports PT</p>
+          <h1 className="mt-4 text-[1.85rem] font-bold leading-[0.98] tracking-tight text-white heading sm:text-[3.65rem]">
+            Baseball performance testing that turns data into a better training plan.
           </h1>
 
           <div className="mt-5 h-px w-44 overflow-hidden bg-white/15 sm:mt-6 sm:w-60">
             <div className="h-full w-28 bg-red-600 sm:w-40" />
           </div>
 
-          <p className="mt-5 max-w-xl text-[0.98rem] text-zinc-300 sm:mt-6 sm:text-[1.08rem]">
-            We turn objective testing into clear sports performance and return-to-play decisions.
+          <p className="mt-5 max-w-2xl text-[0.98rem] text-zinc-300 sm:mt-6 sm:text-[1.08rem]">
+            MMPT combines sports physical therapy, motion capture, force testing, strength measures, and baseball-specific programming to help athletes understand what is limiting mobility, power, throwing durability, and return-to-sport readiness.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -44,15 +43,25 @@ export default function HomeHero() {
               Book Athlete Assessment
             </TrackedLink>
             <TrackedLink
-              href={`${bookingUrl}&service=pt`}
-              intent="hero_pt"
-              label="Book Sports PT"
+              href="#process"
+              intent="hero_assessment_process"
+              label="See How Assessment Works"
               variant="ghost"
               className="px-5 py-2.5 text-[0.72rem]"
             >
-              Book Sports PT
+              See How Assessment Works
             </TrackedLink>
           </div>
+
+          <TrackedLink
+            href="/services#team-assessments"
+            intent="hero_team_testing"
+            label="Request Team Testing"
+            variant="ghost"
+            className="mt-3 px-4 py-2 text-[0.66rem]"
+          >
+            Coach or team? Request team testing.
+          </TrackedLink>
         </div>
       </div>
     </section>
