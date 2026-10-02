@@ -159,27 +159,25 @@ export default function AboutPage() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            <div className="relative overflow-hidden rounded-none border border-white/10 bg-black/65">
+            <div className="relative min-h-[15rem] overflow-hidden rounded-none border border-white/10 bg-black/65 sm:min-h-[18rem] lg:min-h-[16rem]">
               <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
               <Image
                 src="/images/facility-a.jpeg"
                 alt="Movement Medicine performance and rehab facility"
-                width={1203}
-                height={803}
+                fill
                 sizes="(min-width: 1024px) 34vw, (min-width: 640px) 50vw, 100vw"
-                className="h-[15rem] w-full object-cover sm:h-[18rem] lg:h-[16rem]"
+                className="object-cover"
               />
             </div>
 
-            <div className="relative overflow-hidden rounded-none border border-white/10 bg-black/65">
+            <div className="relative min-h-[15rem] overflow-hidden rounded-none border border-white/10 bg-black/65 sm:min-h-[18rem] lg:min-h-[16rem]">
               <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
               <Image
                 src="/images/facility-b.jpeg"
                 alt="Movement Medicine athlete training and treatment space"
-                width={1203}
-                height={803}
+                fill
                 sizes="(min-width: 1024px) 34vw, (min-width: 640px) 50vw, 100vw"
-                className="h-[15rem] w-full object-cover sm:h-[18rem] lg:h-[16rem]"
+                className="object-cover"
               />
             </div>
           </div>
