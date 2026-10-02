@@ -1,3 +1,4 @@
+import MarketingShell from "../../components/marketing/MarketingShell";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Metadata } from "next";
@@ -37,10 +38,10 @@ export default function PrivacyPage() {
   const policy = readPrivacyPolicy();
 
   return (
-    <main className="min-h-screen bg-zinc-950 px-4 py-10 text-zinc-100 sm:px-6 sm:py-14 lg:px-8">
-      <article className="mx-auto max-w-3xl">
+    <MarketingShell>
+      <article className="legal-page mx-auto w-full max-w-4xl">
         <header className="border-b border-white/10 pb-6">
-          <p className="text-sm font-semibold uppercase text-red-300">Legal</p>
+          <p className="text-sm font-semibold uppercase text-[var(--accent)]">Legal</p>
           <h1 className="mt-3 text-3xl font-semibold heading text-white sm:text-4xl">
             {policy.title}
           </h1>
@@ -52,7 +53,7 @@ export default function PrivacyPage() {
 
         <section
           aria-label="Privacy Policy"
-          className="mt-8 rounded-lg bg-white px-4 py-6 text-zinc-950 shadow-2xl sm:px-8 sm:py-9"
+          className="legal-copy mt-8 border border-white/10 px-5 py-7 sm:px-9 sm:py-10"
         >
           <div className="space-y-5 text-[0.95rem] leading-7 sm:text-base">
             {policy.paragraphs.map((paragraph, index) => (
@@ -63,6 +64,6 @@ export default function PrivacyPage() {
           </div>
         </section>
       </article>
-    </main>
+    </MarketingShell>
   );
 }

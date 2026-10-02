@@ -10,7 +10,7 @@ export default function ServiceDetailSections() {
         <article
           key={service.slug}
           id={`detail-${service.slug}`}
-          className="section-shell rounded-[1.5rem] p-5 card sm:p-8"
+          className="section-shell"
         >
           <p className="kicker">{service.tag}</p>
           <h2 className="mt-2 text-[1.6rem] font-semibold heading sm:text-[2.15rem]">
@@ -21,8 +21,8 @@ export default function ServiceDetailSections() {
           </p>
 
           <div className="mt-5 grid gap-3 xl:grid-cols-3">
-            <div className="rounded-[0.95rem] border border-white/10 bg-black/45 p-4">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-red-300">
+            <div className="rounded-none border border-white/10 bg-black/45 p-4">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
                 Best for
               </p>
               <div className="mt-3 divide-y divide-white/10 border-y border-white/10 text-sm text-zinc-300">
@@ -34,8 +34,8 @@ export default function ServiceDetailSections() {
               </div>
             </div>
 
-            <div className="rounded-[0.95rem] border border-white/10 bg-black/45 p-4">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-red-300">
+            <div className="rounded-none border border-white/10 bg-black/45 p-4">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
                 What it includes
               </p>
               <div className="mt-3 divide-y divide-white/10 border-y border-white/10 text-sm text-zinc-300">
@@ -47,8 +47,8 @@ export default function ServiceDetailSections() {
               </div>
             </div>
 
-            <div className="rounded-[0.95rem] border border-white/10 bg-black/45 p-4">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-red-300">
+            <div className="rounded-none border border-white/10 bg-black/45 p-4">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
                 Why MMPT
               </p>
               <div className="mt-3 divide-y divide-white/10 border-y border-white/10 text-sm text-zinc-300">
@@ -94,7 +94,7 @@ export default function ServiceDetailSections() {
             {service.faqs.map((faq) => (
               <details
                 key={faq.question}
-                className="rounded-[0.9rem] border border-white/10 bg-black/45 p-4"
+                className="rounded-none border border-white/10 bg-black/45 p-4"
               >
                 <summary className="cursor-pointer list-none text-[0.98rem] font-semibold text-zinc-100">
                   {faq.question}

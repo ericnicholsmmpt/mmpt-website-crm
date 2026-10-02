@@ -10,7 +10,6 @@ import { TrackedLink } from "../../components/ui/TrackedLink";
 import {
   bookingUrl,
   featuredTeamMembers,
-  supportingTeamMembers,
 } from "../../lib/content/site";
 import { buildBreadcrumbJsonLd, buildPageMetadata } from "../../lib/seo";
 
@@ -53,7 +52,7 @@ export default function TeamPage() {
         }
       />
 
-      <section className="section-shell rounded-[2rem] p-5 card sm:p-9">
+      <section className="section-shell">
         <SectionIntro
           kicker="Leadership"
           title="A performance-minded team built for athletes, not generic care."
@@ -63,7 +62,7 @@ export default function TeamPage() {
           {featuredTeamMembers.map((member) => (
             <article
               key={member.name}
-              className="overflow-hidden rounded-[1.6rem] border border-white/10 bg-black/60"
+              className="overflow-hidden rounded-none border border-white/10 bg-black/60"
             >
               <div className="relative aspect-[4/5] overflow-hidden">
                 <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.02)_0%,rgba(0,0,0,0.16)_48%,rgba(20,4,4,0.92)_100%)]" />
@@ -78,7 +77,7 @@ export default function TeamPage() {
               </div>
 
               <div className="p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
                   {member.role}
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold heading">{member.name}</h2>
@@ -91,38 +90,13 @@ export default function TeamPage() {
                   {member.highlights.map((highlight) => (
                     <div
                       key={highlight}
-                      className="rounded-[1.2rem] border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-zinc-200"
+                      className="rounded-none border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-zinc-200"
                     >
                       {highlight}
                     </div>
                   ))}
                 </div>
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section-shell rounded-[2rem] p-5 card sm:p-9">
-        <SectionIntro
-          kicker="Extended clinical team"
-          title="Additional clinicians strengthening the standard of care."
-          copy="Movement Medicine also draws on clinicians across performance-minded rehab, overhead athlete care, and long-term athlete development."
-        />
-        <div className="mt-7 grid gap-4 md:grid-cols-3">
-          {supportingTeamMembers.map((member) => (
-            <article
-              key={member.name}
-              className="rounded-[1.6rem] border border-white/10 bg-black/60 p-5"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
-                {member.role}
-              </p>
-              <h2 className="mt-4 text-2xl font-semibold heading">{member.name}</h2>
-              <p className="mt-1 text-sm uppercase tracking-[0.16em] text-zinc-400">
-                {member.credentials}
-              </p>
-              <p className="mt-4 text-sm text-zinc-300 sm:text-base">{member.copy}</p>
             </article>
           ))}
         </div>

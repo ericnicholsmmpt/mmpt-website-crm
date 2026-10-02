@@ -18,7 +18,7 @@ export default function PageHero({
   copyClassName = "text-sm sm:text-[0.96rem]",
 }: PageHeroProps) {
   return (
-    <section className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
+    <section className="section-shell page-hero">
       <p className="kicker">{kicker}</p>
       <h1
         className={`mt-3 max-w-5xl font-bold leading-[0.98] heading ${titleClassName}`}

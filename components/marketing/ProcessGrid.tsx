@@ -15,12 +15,12 @@ export default function ProcessGrid({
   copy,
 }: ProcessGridProps) {
   return (
-    <section id={id} className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
+    <section id={id} className="section-shell">
       <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
         <SectionIntro kicker={kicker} title={title} copy={copy} />
         <div className="grid gap-3 sm:grid-cols-2">
           {processSteps.map((item) => (
-            <article key={item.step} className="rounded-[1rem] border border-white/10 bg-black/45 p-4">
+            <article key={item.step} className="rounded-none border border-white/10 bg-black/45 p-4">
               <div className="flex flex-wrap items-center gap-3">
                 <div className="pill pill-active min-w-[2.8rem] justify-center px-2.5 py-1">
                   {item.step}

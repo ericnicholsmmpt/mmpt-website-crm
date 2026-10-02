@@ -35,7 +35,7 @@ const platformScreens = [
 
 export default function PerformanceBoard() {
   return (
-    <section className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
+    <section className="section-shell">
       <div className="grid gap-5 lg:grid-cols-[0.92fr_1.08fr]">
         <div className="grid gap-5">
           <div>
@@ -51,7 +51,7 @@ export default function PerformanceBoard() {
           <div className="grid gap-3 sm:grid-cols-2">
             {systemHighlights.map((item) => (
               <article key={item.label} className="rounded-[1rem] border border-white/10 bg-black/45 p-4">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-red-300">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
                   {item.label}
                 </p>
                 <h3 className="mt-2.5 text-[1.08rem] font-semibold heading sm:text-[1.24rem]">{item.value}</h3>

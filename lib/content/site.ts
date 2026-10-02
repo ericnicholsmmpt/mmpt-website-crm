@@ -197,7 +197,7 @@ export const services: ServiceDefinition[] = [
     title: "Baseball Athlete Assessment",
     shortTitle: "Baseball Athlete Assessment",
     tag: "Data-driven evaluation",
-    image: "/images/mmpt-performance-dashboard-laptop-hero.png",
+    image: "/images/mmpt-performance-dashboard-laptop-v2.png",
     imageClassName: "object-[58%_36%] brightness-[1.08] contrast-[1.08]",
     imageOverlayClassName:
       "bg-[linear-gradient(180deg,rgba(0,0,0,0.03)_0%,rgba(0,0,0,0.14)_38%,rgba(20,4,4,0.68)_100%)]",

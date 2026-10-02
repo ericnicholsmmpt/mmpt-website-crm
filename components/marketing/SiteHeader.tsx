@@ -24,11 +24,8 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
     setMobileOpenPath(null);
   }
 
-  const headerClass = overlay
-    ? "fixed inset-x-0 top-0 z-40 border-b border-white/10 bg-[#08090bcc] backdrop-blur-xl"
-    : "sticky top-0 z-30 border-b border-white/10 bg-[#08090bf2] backdrop-blur-xl";
-  const navLinkClass =
-    "text-[0.9rem] font-medium text-zinc-300 transition hover:text-white focus-outline";
+  const headerClass = `site-header ${overlay ? "site-header-overlay" : ""}`;
+  const navLinkClass = "site-nav-link focus-outline";
 
   return (
     <header className={headerClass}>
@@ -36,11 +33,11 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
         <div className="flex min-w-0 items-center gap-2.5 sm:gap-3">
           <Link
             href="/"
-            className="focus-outline flex min-w-0 items-center gap-3 rounded-xl"
+            className="focus-outline flex min-w-0 items-center gap-3 rounded-none"
           >
             <div className="relative h-11 w-11 shrink-0 overflow-hidden sm:h-12 sm:w-12">
               <Image
-                src="/images/icon.jpeg"
+                src="/images/brand-logo.png"
                 alt="Movement Medicine Performance icon"
                 fill
                 sizes="48px"
@@ -49,10 +46,10 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
             </div>
             <div className="min-w-0 max-w-[13rem] sm:max-w-[24rem]">
               <p className="truncate text-[0.76rem] font-semibold leading-tight text-white sm:text-[0.88rem]">
-                Movement Performance and Sports Medicine
+                Movement Medicine
               </p>
               <p className="mt-0.5 hidden text-[0.7rem] leading-tight text-zinc-400 sm:block">
-                Sports medicine physical therapy, athlete assessments, and performance training
+                Performance & Sports PT
               </p>
             </div>
           </Link>
@@ -60,7 +57,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
 
           <div className="hidden items-center gap-2.5 text-sm lg:flex">
           {primaryNav.map((item) => (
-            <Link key={item.href} href={item.href} className={navLinkClass}>
+            <Link key={item.href} href={item.href} className={navLinkClass} aria-current={pathname === item.href ? "page" : undefined}>
               {item.label}
             </Link>
           ))}
@@ -78,7 +75,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
             href="https://dashboard.mmptperformance.com/login"
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-8 items-center justify-center rounded-xl border border-white/12 bg-white/[0.015] px-3 py-0 text-[0.78rem] font-medium leading-none text-zinc-300 transition hover:border-white/24 hover:bg-white/[0.04] hover:text-white focus-outline"
+            className="inline-flex h-8 items-center justify-center rounded-none border border-white/12 bg-white/[0.015] px-3 py-0 text-[0.78rem] font-medium leading-none text-zinc-300 transition hover:border-white/24 hover:bg-white/[0.04] hover:text-white focus-outline"
           >
             Client Login
           </a>
@@ -99,7 +96,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             onClick={toggleMobileMenu}
-            className="inline-flex items-center gap-2 rounded-xl border border-white/16 bg-white/[0.02] px-3 py-2 text-sm font-medium text-white transition hover:border-white/28 hover:bg-white/[0.05] focus-outline"
+            className="inline-flex items-center gap-2 rounded-none border border-white/16 bg-white/[0.02] px-3 py-2 text-sm font-medium text-white transition hover:border-white/28 hover:bg-white/[0.05] focus-outline"
           >
             <span className="text-xs uppercase tracking-[0.12em]">Menu</span>
             <span className="flex flex-col gap-1">
@@ -112,14 +109,14 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
       </nav>
 
       {mobileOpen ? (
-        <div id="mobile-nav" className="border-t border-white/10 bg-black/96 lg:hidden">
+        <div id="mobile-nav" className="border-t border-white/10 bg-[#111111] lg:hidden">
           <div className="mx-auto grid w-full max-w-[1440px] gap-3 px-4 py-4 sm:px-7 lg:px-10">
             {primaryNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={closeMobileMenu}
-                className="rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-sm font-medium text-zinc-200 transition hover:border-white/20 hover:bg-white/[0.04] focus-outline"
+                className="rounded-none border border-white/10 bg-white/[0.02] px-4 py-3 text-sm font-medium text-zinc-200 transition hover:border-white/20 hover:bg-white/[0.04] focus-outline"
               >
                 {item.label}
               </Link>
@@ -130,7 +127,7 @@ export default function SiteHeader({ overlay = false }: SiteHeaderProps) {
               target="_blank"
               rel="noreferrer"
               onClick={closeMobileMenu}
-              className="inline-flex items-center justify-center rounded-xl border border-white/16 bg-white/[0.02] px-4 py-3 text-sm font-medium text-white transition hover:border-white/28 hover:bg-white/[0.05] focus-outline"
+              className="inline-flex items-center justify-center rounded-none border border-white/16 bg-white/[0.02] px-4 py-3 text-sm font-medium text-white transition hover:border-white/28 hover:bg-white/[0.05] focus-outline"
             >
               Client Login
             </a>

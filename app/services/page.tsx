@@ -83,7 +83,7 @@ export default function ServicesPage() {
 
       <section
         id="team-assessments"
-        className="section-shell overflow-hidden rounded-[1.5rem] p-5 card sm:p-7"
+        className="section-shell overflow-hidden rounded-none p-5 card sm:p-7"
       >
         <div className="relative">
           <div className="grid gap-7 xl:grid-cols-[minmax(0,0.88fr)_minmax(34rem,0.92fr)] xl:items-center 2xl:grid-cols-[minmax(0,0.9fr)_minmax(40rem,1fr)]">
@@ -126,7 +126,7 @@ export default function ServicesPage() {
                   href="/contact#book"
                   intent="team_assessment_contact"
                   label="Request Team Assessment"
-                  className="inline-flex h-10 items-center justify-center rounded-xl border border-red-500/45 bg-[linear-gradient(180deg,rgba(150,25,25,0.94),rgba(96,18,18,0.96))] px-4 py-0 text-[0.64rem] font-semibold uppercase leading-none tracking-[0.08em] text-white transition hover:border-red-400/70 focus-outline"
+                  className="brand-button brand-button-primary focus-outline"
                 >
                   Request Team Assessment
                 </TrackedLink>
@@ -148,7 +148,7 @@ export default function ServicesPage() {
             </div>
 
             <div className="xl:pt-0">
-              <div className="relative mx-auto aspect-[2940/1364] w-full max-w-[42rem] overflow-hidden rounded-[1.15rem] border border-white/10 bg-black shadow-[0_18px_50px_rgba(0,0,0,0.36)] xl:ml-auto 2xl:max-w-[48rem]">
+              <div className="relative mx-auto aspect-[2940/1364] w-full max-w-[42rem] overflow-hidden rounded-none border border-white/10 bg-black shadow-[0_18px_50px_rgba(0,0,0,0.36)] xl:ml-auto 2xl:max-w-[48rem]">
                 <Image
                   src="/images/mmpt-platform-coach-login-preview.png"
                   alt="Movement Medicine Performance Platform sign-in screen with athlete management system features"

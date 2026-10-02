@@ -18,7 +18,7 @@ const actionCards = [
   {
     title: "Athlete Assessment",
     subtitle: "Force plate, movement, next-step clarity",
-    image: "/images/mmpt-performance-dashboard-laptop-hero.png",
+    image: "/images/mmpt-performance-dashboard-laptop-v2.png",
     imageClassName: "object-[58%_38%] brightness-[1.08] contrast-[1.06]",
     overlayClassName:
       "bg-[linear-gradient(180deg,rgba(0,0,0,0.03)_0%,rgba(0,0,0,0.16)_38%,rgba(20,4,4,0.72)_100%)]",
@@ -41,7 +41,7 @@ const actionCards = [
 
 export default function HomeActionGrid() {
   return (
-    <section id="services" className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
+    <section id="services" className="section-shell">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="kicker">Choose Your Path</p>
@@ -61,7 +61,7 @@ export default function HomeActionGrid() {
         {actionCards.map((card) => (
           <article
             key={card.title}
-            className="overflow-hidden rounded-[1.2rem] border border-white/10 bg-black/55"
+            className="overflow-hidden rounded-none border border-white/10 bg-black/55"
           >
             <div className="relative border-b border-white/10">
               <div className={`absolute inset-0 z-10 ${card.overlayClassName}`} />
@@ -76,7 +76,7 @@ export default function HomeActionGrid() {
             </div>
             <div className="flex min-h-[9.2rem] flex-col gap-3 p-4 sm:min-h-[9.8rem] sm:p-[1.125rem]">
               <div>
-                <p className="min-h-[2.8rem] text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-red-300 sm:text-[0.72rem]">
+                <p className="min-h-[2.8rem] text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[var(--accent)] sm:text-[0.72rem]">
                   {card.subtitle}
                 </p>
                 <h3 className="mt-2 text-[1.18rem] font-semibold heading sm:text-[1.35rem]">{card.title}</h3>

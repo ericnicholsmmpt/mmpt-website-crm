@@ -1,3 +1,4 @@
+import MarketingShell from "../../components/marketing/MarketingShell";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "../../lib/seo";
 
@@ -19,10 +20,10 @@ export default function SupportPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-zinc-950 px-4 py-10 text-zinc-100 sm:px-6 sm:py-14 lg:px-8">
-      <article className="mx-auto max-w-3xl">
+    <MarketingShell>
+      <article className="legal-page mx-auto w-full max-w-4xl">
         <header className="border-b border-white/10 pb-6">
-          <p className="text-sm font-semibold uppercase text-red-300">Help</p>
+          <p className="text-sm font-semibold uppercase text-[var(--accent)]">Help</p>
           <h1 className="mt-3 text-3xl font-semibold heading text-white sm:text-4xl">
             Support
           </h1>
@@ -30,11 +31,11 @@ export default function SupportPage() {
 
         <section
           aria-label="Support information"
-          className="mt-8 rounded-lg bg-white px-4 py-6 text-zinc-950 shadow-2xl sm:px-8 sm:py-9"
+          className="legal-copy mt-8 border border-white/10 px-5 py-7 sm:px-9 sm:py-10"
         >
           <div className="space-y-8 text-[0.95rem] leading-7 sm:text-base">
             <section aria-labelledby="support-contact">
-              <h2 id="support-contact" className="text-xl font-semibold text-zinc-950">
+              <h2 id="support-contact" className="text-xl font-semibold text-zinc-100">
                 Contact
               </h2>
               <div className="mt-4 space-y-2">
@@ -54,7 +55,7 @@ export default function SupportPage() {
             </section>
 
             <section aria-labelledby="support-help">
-              <h2 id="support-help" className="text-xl font-semibold text-zinc-950">
+              <h2 id="support-help" className="text-xl font-semibold text-zinc-100">
                 What We Help With
               </h2>
               <ul className="mt-4 list-disc space-y-2 pl-5">
@@ -65,7 +66,7 @@ export default function SupportPage() {
             </section>
 
             <section aria-labelledby="support-response">
-              <h2 id="support-response" className="text-xl font-semibold text-zinc-950">
+              <h2 id="support-response" className="text-xl font-semibold text-zinc-100">
                 Response Expectations
               </h2>
               <p className="mt-4">We typically respond within 24-48 hours.</p>
@@ -73,6 +74,6 @@ export default function SupportPage() {
           </div>
         </section>
       </article>
-    </main>
+    </MarketingShell>
   );
 }

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Suspense } from "react";
-import { Inter, Rajdhani } from "next/font/google";
 import VisitTracker from "../components/analytics/VisitTracker";
 import GoogleAnalytics from "../components/analytics/GoogleAnalytics";
 import JsonLd from "../components/seo/JsonLd";
@@ -13,19 +12,6 @@ import {
   siteUrl,
 } from "../lib/seo";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const rajdhani = Rajdhani({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -94,12 +80,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${rajdhani.variable} antialiased`}>
+      <body className="antialiased">
         <JsonLd data={siteGraphJsonLd} />
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
-        <div className="min-h-screen bg-black text-zinc-100">
+        <div className="min-h-screen bg-[var(--surface)] text-zinc-100">
           <VisitTracker />
           {children}
         </div>

@@ -14,8 +14,8 @@ export default function ConversionBand({
   actions,
 }: ConversionBandProps) {
   return (
-    <section className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
-      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+    <section className="section-shell conversion-band">
+      <div className="flex flex-col gap-4 lg:items-start">
         <div>
           <p className="kicker">{kicker}</p>
           <h2 className="mt-2 text-[1.5rem] font-semibold heading sm:text-[2rem]">

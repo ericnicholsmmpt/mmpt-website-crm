@@ -78,7 +78,7 @@ export default function AboutPage() {
         }
       />
 
-      <section className="section-shell rounded-[2rem] p-5 card sm:p-9">
+      <section className="section-shell">
         <SectionIntro
           kicker="What defines MMPT"
           title="Sports medicine, performance, and follow-through in one system."
@@ -88,9 +88,9 @@ export default function AboutPage() {
           {aboutPillars.map((pillar) => (
             <article
               key={pillar.title}
-              className="rounded-[1.6rem] border border-white/10 bg-black/60 p-5"
+              className="rounded-none border border-white/10 bg-black/60 p-5"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
                 {pillar.title}
               </p>
               <p className="mt-4 text-sm text-zinc-300 sm:text-base">
@@ -101,7 +101,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-shell rounded-[2rem] p-5 card sm:p-9">
+      <section className="section-shell">
         <div className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
           <div>
             <p className="kicker">Who we serve</p>
@@ -119,7 +119,7 @@ export default function AboutPage() {
             {whoWeServe.map((group) => (
               <article
                 key={group}
-                className="rounded-[1.35rem] border border-white/10 bg-black/60 p-4"
+                className="rounded-none border border-white/10 bg-black/60 p-4"
               >
                 <p className="text-sm font-medium text-zinc-200 sm:text-base">{group}</p>
               </article>
@@ -128,7 +128,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-shell rounded-[2rem] p-5 card sm:p-9">
+      <section className="section-shell">
         <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr]">
           <div className="grid gap-4">
             <div>
@@ -147,9 +147,9 @@ export default function AboutPage() {
               {facilityHighlights.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-[1.35rem] border border-white/10 bg-black/60 p-4"
+                  className="rounded-none border border-white/10 bg-black/60 p-4"
                 >
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
                     {item.title}
                   </p>
                   <p className="mt-3 text-sm text-zinc-300 sm:text-base">{item.copy}</p>
@@ -159,7 +159,7 @@ export default function AboutPage() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-            <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-black/65">
+            <div className="relative overflow-hidden rounded-none border border-white/10 bg-black/65">
               <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
               <Image
                 src="/images/facility-a.jpeg"
@@ -171,7 +171,7 @@ export default function AboutPage() {
               />
             </div>
 
-            <div className="relative overflow-hidden rounded-[1.8rem] border border-white/10 bg-black/65">
+            <div className="relative overflow-hidden rounded-none border border-white/10 bg-black/65">
               <div className="absolute inset-0 z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,rgba(0,0,0,0.26)_42%,rgba(20,4,4,0.88)_100%)]" />
               <Image
                 src="/images/facility-b.jpeg"
@@ -186,7 +186,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section-shell rounded-[2rem] p-5 card sm:p-9">
+      <section className="section-shell">
         <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
             <p className="kicker">Location</p>
@@ -202,7 +202,7 @@ export default function AboutPage() {
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact#locations"
-                className="inline-flex h-10 items-center justify-center rounded-full border border-red-400/60 bg-[linear-gradient(180deg,rgba(185,28,28,0.98),rgba(127,29,29,0.96))] px-4 py-0 text-[0.66rem] font-semibold uppercase leading-none tracking-[0.12em] text-white transition hover:border-red-300 hover:shadow-[0_18px_44px_rgba(127,29,29,0.35)] focus-outline"
+                className="brand-button brand-button-primary focus-outline"
               >
                 View Locations
               </Link>
@@ -222,9 +222,9 @@ export default function AboutPage() {
             {contactLocationPoints.map((item) => (
               <article
                 key={item.label}
-                className="rounded-[1.35rem] border border-white/10 bg-black/60 p-4"
+                className="rounded-none border border-white/10 bg-black/60 p-4"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
                   {item.label}
                 </p>
                 <p className="mt-3 whitespace-pre-line text-sm text-zinc-200 sm:text-base">

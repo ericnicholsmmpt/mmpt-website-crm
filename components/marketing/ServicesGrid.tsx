@@ -19,14 +19,14 @@ export default function ServicesGrid({
   copy,
 }: ServicesGridProps) {
   return (
-    <section id={id} className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
+    <section id={id} className="section-shell">
       <SectionIntro kicker={kicker} title={title} copy={copy} />
 
       <div className="mt-6 grid gap-4 xl:grid-cols-2">
         {services.map((service) => (
           <article
             key={service.slug}
-            className="min-w-0 flex h-full flex-col overflow-hidden rounded-[1.2rem] border border-white/10 bg-black/55"
+            className="min-w-0 flex h-full flex-col overflow-hidden rounded-none border border-white/10 bg-black/55"
           >
             <div className="relative border-b border-white/10">
               {service.slug !== "remote-coaching-and-follow-up" &&
@@ -106,7 +106,7 @@ export default function ServicesGrid({
               )}
             </div>
             <div className="min-w-0 flex grow flex-col p-4 sm:p-5">
-              <p className="min-w-0 text-[0.66rem] font-semibold uppercase leading-tight tracking-[0.12em] text-red-300 sm:text-[0.7rem]">
+              <p className="min-w-0 text-[0.66rem] font-semibold uppercase leading-tight tracking-[0.12em] text-[var(--accent)] sm:text-[0.7rem]">
                 {service.tag}
               </p>
               <h3 className="mt-3 text-[1.15rem] font-semibold heading sm:text-[1.32rem]">{service.title}</h3>

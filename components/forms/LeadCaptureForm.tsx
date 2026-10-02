@@ -89,7 +89,7 @@ export default function LeadCaptureForm({
   const disabled = status === "sending";
 
   return (
-    <section id="book" className="section-shell rounded-[1.5rem] p-5 card sm:p-8">
+    <section id="book" className="section-shell">
       <p className="kicker">Book with context</p>
       <h2 className="mt-2 text-[1.55rem] font-bold heading sm:text-[2rem]">
         Tell us what you need, and we will help guide the right next step.
@@ -102,7 +102,7 @@ export default function LeadCaptureForm({
         <form
           ref={formRef}
           onSubmit={onSubmit}
-          className="grid gap-4 rounded-[1rem] border border-white/10 bg-black/45 p-4 sm:p-5"
+          className="grid gap-4 rounded-none border border-white/10 bg-black/45 p-4 sm:p-5"
         >
           <div className="grid gap-4 md:grid-cols-2">
             <label className="grid gap-1 text-sm text-zinc-200">
@@ -111,7 +111,7 @@ export default function LeadCaptureForm({
                 name="firstName"
                 required
                 placeholder="First name"
-                className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+                className="rounded-none border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
                 autoComplete="given-name"
               />
             </label>
@@ -121,7 +121,7 @@ export default function LeadCaptureForm({
                 name="lastName"
                 required
                 placeholder="Last name"
-                className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+                className="rounded-none border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
                 autoComplete="family-name"
               />
             </label>
@@ -135,7 +135,7 @@ export default function LeadCaptureForm({
                 type="email"
                 required
                 placeholder="you@athletemail.com"
-                className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+                className="rounded-none border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
                 autoComplete="email"
               />
             </label>
@@ -146,7 +146,7 @@ export default function LeadCaptureForm({
                 type="tel"
                 required
                 placeholder="(555) 555-1234"
-                className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+                className="rounded-none border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
                 autoComplete="tel"
               />
             </label>
@@ -160,7 +160,7 @@ export default function LeadCaptureForm({
               rows={4}
               maxLength={700}
               placeholder="Describe the pain point, performance issue, or timeline you want help with."
-              className="rounded-xl border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
+              className="rounded-none border border-white/12 bg-white/[0.03] px-3 py-2.5 text-zinc-100 placeholder:text-zinc-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"
             />
           </label>
 
@@ -188,7 +188,7 @@ export default function LeadCaptureForm({
 
           {message && (
             <div
-              className={`rounded-[1rem] border px-4 py-3 text-sm ${
+              className={`rounded-none border px-4 py-3 text-sm ${
                 status === "error"
                   ? "border-rose-400/40 bg-rose-500/10 text-rose-200"
                   : "border-emerald-400/35 bg-emerald-500/10 text-emerald-200"
@@ -202,7 +202,7 @@ export default function LeadCaptureForm({
             <button
               type="submit"
               disabled={disabled}
-              className="inline-flex h-10 w-full items-center justify-center rounded-xl border border-red-500/45 bg-[linear-gradient(180deg,rgba(150,25,25,0.94),rgba(96,18,18,0.96))] px-4 py-0 text-[0.64rem] font-semibold uppercase leading-none tracking-[0.08em] text-white transition hover:border-red-400/70 focus-outline disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+              className="brand-button brand-button-primary focus-outline disabled:cursor-not-allowed disabled:opacity-60"
             >
               {disabled ? "Submitting priorities..." : "Get best-fit recommendation"}
             </button>
@@ -219,7 +219,7 @@ export default function LeadCaptureForm({
           </div>
         </form>
 
-        <aside className="rounded-[1rem] border border-white/10 bg-black/45 p-4 sm:p-5">
+        <aside className="rounded-none border border-white/10 bg-black/45 p-4 sm:p-5">
           <div className="pill pill-active px-3.5 py-1.5">Start with your goal</div>
           <h3 className="mt-4 text-[1.12rem] font-semibold heading sm:text-[1.3rem]">
             The more context you share, the better we can guide the process.
@@ -234,7 +234,7 @@ export default function LeadCaptureForm({
                 key={signal}
                 className="py-3.5"
               >
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-red-300">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-[var(--accent)]">
                   Focus 0{index + 1}
                 </p>
                 <p className="mt-1.5 text-sm text-zinc-200 sm:text-[0.92rem]">{signal}</p>
